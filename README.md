@@ -15,7 +15,7 @@ The app uses a simple Layered Architecture, following the Controller-Service-Rep
 
 - Each Repository, Service, and Controller inherits from a generic base class (`BaseRepository`, `BaseService`, `BaseController`), which encapsulates the common CRUD methods.
 
-- As a temporary storage solutions, the repositories utilise HashMaps to store and manage entitiy instances in memory.
+- As a temporary storage solution, the repositories utilise HashMaps to store and manage entitiy instances in memory.
 
 ## Model Expansions
 To meet the assignment requirements, we expanded three core UML models with additional attributes:
