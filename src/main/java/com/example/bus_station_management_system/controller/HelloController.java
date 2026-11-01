@@ -9,6 +9,6 @@ public class HelloController {
     @GetMapping("/hello")
     @ResponseBody
     public String sayHello() {
-        return "Die Anwendung funktioniert!";
+        return "<h1>Die Anwendung funktioniert!</h1>";
     }
 }

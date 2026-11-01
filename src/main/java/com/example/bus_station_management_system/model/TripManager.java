@@ -13,9 +13,16 @@ public class TripManager extends Staff {
         this.assignments = new ArrayList<>();
     }
 
+    public TripManager(String id, String name, int salary, String employeeCode) {
+        super(id, name, salary);
+        this.employeeCode = employeeCode;
+        this.assignments = new ArrayList<>();
+    }
+
     public String getEmployeeCode() { return employeeCode; }
     public void setEmployeeCode(String employeeCode) { this.employeeCode = employeeCode; }
 
     public List<DutyAssignment> getAssignments() { return assignments; }
     public void setAssignments(List<DutyAssignment> assignments) { this.assignments = assignments; }
+
 }
