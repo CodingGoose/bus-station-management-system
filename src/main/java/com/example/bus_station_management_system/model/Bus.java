@@ -2,21 +2,26 @@ package com.example.bus_station_management_system.model;
 
 public class Bus implements Identifiable<String> {
 
-    enum FuelType {
+    public enum FuelType {
         Gasoline,
         Diesel,
         Electric,
         Hybrid
     }
 
+    public enum BusStatus {
+        Active,
+        Down
+    }
+
     private String id;
     private String registrationNumber;
     private int capacity;
-    private String status; // Active / Down
+    private BusStatus status;
     private boolean hasAC;
     private FuelType fuelType;
 
-    public Bus(String id, String registrationNumber, int capacity, String status) {
+    public Bus(String id, String registrationNumber, int capacity, BusStatus status) {
         this.id = id;
         this.registrationNumber = registrationNumber;
         this.capacity = capacity;

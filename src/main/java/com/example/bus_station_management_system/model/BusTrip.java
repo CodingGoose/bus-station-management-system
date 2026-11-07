@@ -5,17 +5,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BusTrip implements Identifiable<String> {
+
+    public enum TripStatus {
+        Planned,
+        Active,
+        Completed
+    }
+
     private String id;
     private String routeId;
     private String busId;
     private LocalDateTime startTime;
     private List<String> tickets = new ArrayList<>();
     private List<String> assignments = new ArrayList<>();
-    private String status; // Planned / Active / Completed
+    private TripStatus status;
 
     public BusTrip() {}
 
-    public BusTrip(String id, String routeId, String busId, LocalDateTime startTime, String status) {
+    public BusTrip(String id, String routeId, String busId, LocalDateTime startTime, TripStatus status) {
         this.id = id;
         this.routeId = routeId;
         this.busId = busId;
@@ -42,6 +49,6 @@ public class BusTrip implements Identifiable<String> {
     public List<String> getAssignments() { return assignments; }
     public void setAssignments(List<String> assignments) { this.assignments = assignments; }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public TripStatus getStatus() { return status; }
+    public void setStatus(TripStatus status) { this.status = status; }
 }

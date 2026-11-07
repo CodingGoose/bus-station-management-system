@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Driver extends Staff {
-    private String yearsOfExperience;
+    private int yearsOfExperience;
     private List<DutyAssignment> assignments;
     private List<String> decorations;
 
 
-    public Driver(String id, String name, String yearsOfExperience) {
+    public Driver(String id, String name, int yearsOfExperience) {
         super(id, name);
         this.yearsOfExperience = yearsOfExperience;
         this.assignments = new ArrayList<>();
         this.decorations = new ArrayList<>();
     }
 
-    public Driver(String id, String name, int salary, String yearsOfExperience) {
+    public Driver(String id, String name, int salary, int yearsOfExperience) {
         super(id, name, salary);
         this.yearsOfExperience = yearsOfExperience;
         this.assignments = new ArrayList<>();
@@ -24,8 +24,8 @@ public class Driver extends Staff {
     }
 
 
-    public String getYearsOfExperience() { return yearsOfExperience; }
-    public void setYearsOfExperience(String yearsOfExperience) { this.yearsOfExperience = yearsOfExperience; }
+    public int getYearsOfExperience() { return yearsOfExperience; }
+    public void setYearsOfExperience(int yearsOfExperience) { this.yearsOfExperience = yearsOfExperience; }
 
     public List<DutyAssignment> getAssignments() { return assignments; }
     public void setAssignments(List<DutyAssignment> assignments) { this.assignments = assignments; }
