@@ -38,8 +38,8 @@ public class Bus implements Identifiable<String> {
     public int getCapacity() { return capacity; }
     public void setCapacity(int capacity) { this.capacity = capacity; }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public BusStatus getStatus() { return status; }
+    public void setStatus(BusStatus status) { this.status = status; }
 
     public boolean getHasAC() { return hasAC; }
     public void setHasAC(boolean hasAC) { this.hasAC = hasAC; }
