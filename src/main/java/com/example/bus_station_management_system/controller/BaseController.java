@@ -8,45 +8,40 @@ import org.springframework.web.bind.annotation.*;
 public abstract class BaseController<T extends Identifiable<ID>, ID> {
 
     protected final BaseService<T, ID> service;
-    protected final String entityName; // e.g., "bus"
-    protected final String listName;   // e.g., "buses"
+    protected final String folderName; // Used for URLs and HTML paths (e.g., "bus-trip")
+    protected final String modelName;  // Used for Thymeleaf variables (e.g., "busTrip")
+    protected final String listName;   // Used for Thymeleaf lists (e.g., "busTrips")
 
-    // The constructor now requires the string names so Thymeleaf knows which folders to look for
-    public BaseController(BaseService<T, ID> service, String entityName, String listName) {
+    public BaseController(BaseService<T, ID> service, String folderName, String modelName, String listName) {
         this.service = service;
-        this.entityName = entityName;
+        this.folderName = folderName;
+        this.modelName = modelName;
         this.listName = listName;
     }
 
-    // Abstract method to bypass Java's inability to call 'new T()'
     protected abstract T createEmptyEntity();
 
-    // 1. GET /<entität> -> Shows the list
     @GetMapping
     public String getAll(Model model) {
         model.addAttribute(listName, service.findAll());
-        return entityName + "/index"; // Evaluates to something like "bus/index"
+        return folderName + "/index";
     }
 
-    // 2. GET /<entität>/new -> Shows the form
     @GetMapping("/new")
     public String showCreateForm(Model model) {
-        model.addAttribute(entityName, createEmptyEntity());
-        return entityName + "/form"; // Evaluates to something like "bus/form"
+        model.addAttribute(modelName, createEmptyEntity());
+        return folderName + "/form";
     }
 
-    // 3. POST /<entität> -> Processes the form and saves
     @PostMapping
     public String create(@ModelAttribute T entity) {
         service.save(entity);
-        return "redirect:/" + entityName; // Redirects back to the table view
+        return "redirect:/" + folderName;
     }
 
-    // 4. POST /<entität>/{id}/delete -> Deletes the object
-    // The GET /{id} method is removed because detail views are explicitly not required
     @PostMapping("/{id}/delete")
     public String delete(@PathVariable ID id) {
         service.delete(id);
-        return "redirect:/" + entityName; // Redirects back to the table view
+        return "redirect:/" + folderName;
     }
 }
