@@ -4,12 +4,13 @@
 <head th:fragment="header(title)">
     <meta charset="UTF-8">
     <title th:text="${title}">Bus Management</title>
-    <!-- Put your CSS links here once, and all pages get them -->
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
     <style> body { font-family: sans-serif; } table { border-collapse: collapse; } td, th { border: 1px solid black; padding: 8px; } </style>
 </head>
 <body>
 
 <nav th:fragment="navbar">
+    <a href="/">Home</a> |
     <a href="/bus">Buses</a> |
     <a href="/route">Routes</a> |
     <a href="/passenger">Passengers</a>

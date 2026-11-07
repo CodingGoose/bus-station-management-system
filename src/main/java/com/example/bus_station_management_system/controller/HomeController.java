@@ -5,10 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class HelloController {
+public class HomeController {
     @GetMapping("/")
-    @ResponseBody
-    public String sayHello() {
-        return "<h1>Die Anwendung funktioniert!</h1>";
+    public String home() {
+        return "home";
     }
 }
