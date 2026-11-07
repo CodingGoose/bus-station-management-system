@@ -1,5 +1,7 @@
 package com.example.bus_station_management_system.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ public class BusTrip implements Identifiable<String> {
     private String id;
     private String routeId;
     private String busId;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime startTime;
     private List<String> tickets = new ArrayList<>();
     private List<String> assignments = new ArrayList<>();

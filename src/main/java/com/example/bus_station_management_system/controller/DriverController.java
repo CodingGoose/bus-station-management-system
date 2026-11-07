@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/drivers")
+@RequestMapping("/driver")
 public class DriverController extends BaseController<Driver, String> {
     public DriverController(DriverService service) {
         super(service, "driver", "driver",  "drivers");

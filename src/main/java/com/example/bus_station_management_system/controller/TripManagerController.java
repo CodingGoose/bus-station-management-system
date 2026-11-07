@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/trip-managers")
+@RequestMapping("/trip-manager")
 public class TripManagerController extends BaseController<TripManager, String> {
     public TripManagerController(TripManagerService service) {
         super(service, "trip-manager", "tripManager",  "tripManagers");

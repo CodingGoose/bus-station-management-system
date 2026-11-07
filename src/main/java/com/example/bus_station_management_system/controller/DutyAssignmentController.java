@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/duty-assignments")
+@RequestMapping("/duty-assignment")
 public class DutyAssignmentController extends BaseController<DutyAssignment, String> {
     public DutyAssignmentController(DutyAssignmentService service) {
         super(service, "duty-assignment", "dutyAssignment",  "dutyAssignments");

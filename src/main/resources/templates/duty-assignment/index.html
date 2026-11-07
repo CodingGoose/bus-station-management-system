@@ -10,7 +10,7 @@
 <div th:replace="~{fragments/layout :: navbar}"></div>
 
 <h1>Duty Assignments</h1>
-<a href="/duty-assignments/new">Add New Bus</a>
+<a href="/duty-assignment/new">Add New Duty Assignment</a>
 <table>
     <tr>
         <th>ID</th>
@@ -21,8 +21,8 @@
     </tr>
     <tr th:each="item : ${dutyAssignments}">
         <td th:text="${item.id}"></td>
-        <td th:text="${item.tripID}"></td>
-        <td th:text="${item.staffID}"></td>
+        <td th:text="${item.tripId}"></td>
+        <td th:text="${item.staffId}"></td>
         <td th:text="${item.role}"></td>
         <td>
             <form th:action="@{|/duty-assignment/${item.id}/delete|}" method="post">
