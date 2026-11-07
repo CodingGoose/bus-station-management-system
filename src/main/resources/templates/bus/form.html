@@ -24,21 +24,6 @@
     </div>
 
     <div>
-        <label for="manufacturer">Manufacturer:</label>
-        <input type="text" id="manufacturer" th:field="*{manufacturer}" required/>
-    </div>
-
-    <div>
-        <label for="manufacturingYear">Manufacturing Year:</label>
-        <input type="number" id="manufacturingYear" th:field="*{manufacturingYear}" required/>
-    </div>
-<!--    <div>-->
-<!--        <label for="manufacturingYear">Manufacturing Year:</label>-->
-<!--        <input type="range" id="manufacturingYear" th:field="*{manufacturingYear}" min="10" max="50000" oninput="this.nextElementSibling.value = this.value" />-->
-<!--        <output>2505</output>-->
-<!--    </div>-->
-
-    <div>
         <label for="hasAC">Has AC:</label>
         <input type="checkbox" id="hasAC" th:field="*{hasAC}"/>
     </div>
@@ -46,19 +31,18 @@
     <div>
         <label for="fuelType">Fuel Type:</label>
         <select id="fuelType" th:field="*{fuelType}">
-            <option value="GASOLINE">Gasoline</option>
-            <option value="DIESEL">Diesel</option>
-            <option value="ELECTRIC">Electric</option>
-            <option value="HYBRID">Hybrid</option>
+            <option value="Gasoline">Gasoline</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Electric">Electric</option>
+            <option value="Hybrid">Hybrid</option>
         </select>
     </div>
 
     <div>
         <label for="status">Status:</label>
         <select id="status" th:field="*{status}">
-            <option value="ACTIVE">Active</option>
-            <option value="IN_MAINTENANCE">In Maintenance</option>
-            <option value="OUT_OF_SERVICE">Out of Service</option>
+            <option value="Active">Active</option>
+            <option value="Down">Down</option>
         </select>
     </div>
 
