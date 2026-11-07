@@ -4,7 +4,6 @@ import com.example.bus_station_management_system.model.Identifiable;
 import com.example.bus_station_management_system.service.BaseService;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 
 public abstract class BaseController<T extends Identifiable<ID>, ID> {
 

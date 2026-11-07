@@ -4,10 +4,8 @@ import com.example.bus_station_management_system.model.DutyAssignment;
 import com.example.bus_station_management_system.service.DutyAssignmentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@ResponseBody
 @RequestMapping("/duty-assignments")
 public class DutyAssignmentController extends BaseController<DutyAssignment, String> {
     public DutyAssignmentController(DutyAssignmentService service) {
