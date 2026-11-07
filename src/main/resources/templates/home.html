@@ -2,19 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/layout :: header('Dashboard')}"></head>
 <body>
-<div class="dashboard">
-    <h1>Management Dashboard</h1>
+<!-- Loads the page-specific retro styles over the global layout -->
+<link rel="stylesheet" th:href="@{/css/home.css}" />
 
-    <div class="grid-container">
-        <a th:href="@{/bus-station}" class="card">Bus Stations</a>
-        <a th:href="@{/route}" class="card">Routes</a>
-        <a th:href="@{/bus-trip}" class="card">Bus Trips</a>
-        <a th:href="@{/bus}" class="card">Buses</a>
-        <a th:href="@{/passenger}" class="card">Passengers</a>
-        <a th:href="@{/ticket}" class="card">Tickets</a>
-        <a th:href="@{/duty-assignment}" class="card">Duty Assignments</a>
-        <a th:href="@{/driver}" class="card">Drivers</a>
-        <a th:href="@{/trip-manager}" class="card">Trip Managers</a>
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<div class="retro-dash">
+    <h1>SYS_INFO // MAIN_PANEL</h1>
+
+    <div class="retro-grid">
+        <a th:href="@{/bus-station}" class="retro-btn">Stations</a>
+        <a th:href="@{/route}" class="retro-btn">Routes</a>
+        <a th:href="@{/bus-trip}" class="retro-btn">Trips</a>
+        <a th:href="@{/bus}" class="retro-btn">Fleet</a>
+        <a th:href="@{/passenger}" class="retro-btn">Passengers</a>
+        <a th:href="@{/ticket}" class="retro-btn">Tickets</a>
+        <a th:href="@{/duty-assignment}" class="retro-btn">Duties</a>
+        <a th:href="@{/driver}" class="retro-btn">Drivers</a>
+        <a th:href="@{/trip-manager}" class="retro-btn">Managers</a>
     </div>
 </div>
 </body>

@@ -1,70 +1,77 @@
-/* --- Global Typography & Color Palette --- */
+/* --- Global Dashboard Infrastructure --- */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
-    color: #2c3e50;
+    background-color: #1a1a1a;
+    background-image: repeating-linear-gradient(45deg, #1a1a1a 25%, #151515 25%, #151515 50%, #1a1a1a 50%, #1a1a1a 75%, #151515 75%, #151515 100%);
+    background-size: 4px 4px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ddd;
     margin: 0;
     padding: 20px 40px;
 }
 
+/* Digital LCD Headers */
 h1 {
-    color: #1a5276;
-    border-bottom: 2px solid #e0e6ed;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-}
-
-a {
-    color: #2980b9;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-a:hover {
-    color: #154360;
-    text-decoration: underline;
-}
-
-/* --- Dashboard Grid (From home.html) --- */
-.dashboard {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.card {
-    background: #ffffff;
-    border-radius: 8px;
-    padding: 25px 20px;
+    background-color: #051005;
+    color: #39ff14;
     text-align: center;
-    font-weight: 600;
-    font-size: 1.1em;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    border: 1px solid #e0e6ed;
-    transition: transform 0.2s, box-shadow 0.2s;
+    padding: 15px;
+    border: 3px solid #111;
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px #003300, 0 0 10px #39ff14;
+    text-shadow: 0 0 5px #39ff14;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    font-size: 2em;
 }
 
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-    background-color: #f8faff;
+/* --- Top Navigation Bar --- */
+.navbar {
+    background: linear-gradient(180deg, #2a2a2a, #111);
+    border: 4px solid #444;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 0 15px rgba(0,0,0,1), 0 5px 15px rgba(0,0,0,0.8);
+    display: flex;
+    gap: 15px;
+}
+
+.navbar a {
+    color: #ff9900;
     text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    background: linear-gradient(180deg, #555, #222);
+    border: 2px solid #111;
+    border-top: 2px solid #777;
+    border-left: 2px solid #777;
+    border-radius: 5px;
+    box-shadow: 0 4px 0 #000;
+    transition: all 0.1s ease;
+    text-shadow: 0 0 3px rgba(255, 153, 0, 0.5);
 }
 
-/* --- Form Styling --- */
+.navbar a:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #000;
+    border-top: 2px solid #111;
+    border-left: 2px solid #111;
+}
+
+.navbar a:hover {
+    color: #ffb84d;
+}
+
+/* --- Form Panels (Add/Edit) --- */
 form {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    max-width: 500px;
-    border: 1px solid #e0e6ed;
+    background: linear-gradient(180deg, #2a2a2a, #111);
+    border: 4px solid #444;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 600px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,1), 0 10px 30px rgba(0,0,0,0.8);
 }
 
 form div {
@@ -73,106 +80,236 @@ form div {
 
 form label {
     display: block;
-    font-weight: 600;
+    font-weight: bold;
     margin-bottom: 8px;
-    color: #34495e;
+    color: #ff9900; /* Amber panel text */
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Uniform styling for all text boxes, numbers, and dropdowns */
+/* Recessed LCD Inputs */
 form input[type="text"],
 form input[type="number"],
 form select {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccd1d9;
-    border-radius: 6px;
+    background-color: #0a0a0a;
+    color: #39ff14; /* Green LCD font */
+    border: 2px solid #333;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+    border-radius: 4px;
     box-sizing: border-box;
-    font-family: inherit;
-    font-size: 1em;
-    transition: border-color 0.2s;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
+    font-weight: bold;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,1);
+    transition: box-shadow 0.2s, border-color 0.2s;
 }
 
-form input[type="text"]:focus,
-form input[type="number"]:focus,
+form input:focus,
 form select:focus {
-    border-color: #2980b9;
     outline: none;
-    box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.1);
+    border-color: #39ff14;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,1), 0 0 8px #39ff14;
 }
 
 form input[type="checkbox"] {
-    transform: scale(1.2);
+    transform: scale(1.5);
+    accent-color: #ff9900;
     margin-right: 10px;
 }
 
-/* Buttons */
+/* Physical Action Buttons */
 button[type="submit"] {
-    background-color: #2980b9;
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
-    font-size: 1em;
+    background: linear-gradient(180deg, #555, #222);
+    border: 2px solid #111;
+    border-top: 2px solid #777;
+    border-left: 2px solid #777;
+    border-radius: 8px;
+    padding: 15px 30px;
+    color: #39ff14;
+    font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    box-shadow: 0 6px 0 #000, 0 10px 15px rgba(0,0,0,0.5);
     cursor: pointer;
-    transition: background-color 0.2s;
-    margin-right: 15px;
+    transition: all 0.1s ease;
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+    margin-right: 20px;
 }
 
-button[type="submit"]:hover {
-    background-color: #1f618d;
+button[type="submit"]:active {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 #000, inset 0 3px 8px rgba(0,0,0,0.8);
+    border-top: 2px solid #111;
+    border-left: 2px solid #111;
 }
 
-/* Form Cancel Link */
-form a {
-    color: #7f8c8d;
-}
-form a:hover {
-    color: #c0392b;
+/* Cancel Link */
+form > a {
+    color: #ff2a2a;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.1em;
 }
 
-/* --- Table Styling --- */
+form > a:hover {
+    text-shadow: 0 0 8px #ff2a2a;
+}
+
+/* --- Terminal Data Tables --- */
 table {
     width: 100%;
     border-collapse: collapse;
-    background: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    background: #0a0a0a;
+    border: 4px solid #333;
     border-radius: 8px;
-    overflow: hidden;
     margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8), inset 0 0 20px rgba(0,0,0,1);
 }
 
 th, td {
     padding: 15px;
     text-align: left;
-    border-bottom: 1px solid #ecf0f1;
+    border-bottom: 2px solid #1a1a1a;
+    border-right: 2px solid #1a1a1a;
 }
 
 th {
-    background-color: #2c3e50;
-    color: #ffffff;
-    font-weight: 600;
+    background: linear-gradient(180deg, #222, #111);
+    color: #ff9900;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: inset 0 -3px 0 #000;
+}
+
+td {
+    color: #39ff14; /* Data displays in green */
 }
 
 tr:hover {
-    background-color: #f8f9fa;
+    background-color: #002200; /* Subtle green illumination on hover */
 }
 
-/* Delete button inside tables */
+/* Delete Button Inside Tables */
 td form {
     background: none;
     padding: 0;
     box-shadow: none;
     border: none;
     margin: 0;
+    max-width: none;
 }
 
 td form button {
-    background-color: #e74c3c;
-    padding: 8px 12px;
+    padding: 8px 15px;
     font-size: 0.9em;
+    color: #ff2a2a; /* Warning Red for Delete */
+    text-shadow: 0 0 3px rgba(255, 42, 42, 0.5);
 }
 
-td form button:hover {
-    background-color: #c0392b;
+/* --- Home Dashboard Grid (Moved from home.css) --- */
+.retro-dash {
+    background: linear-gradient(180deg, #2a2a2a, #111);
+    border: 4px solid #444;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 40px auto;
+    box-shadow: inset 0 0 20px rgba(0,0,0,1), 0 10px 30px rgba(0,0,0,0.8);
+}
+
+.retro-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.retro-btn {
+    background: linear-gradient(180deg, #555, #222);
+    border: 2px solid #111;
+    border-top: 2px solid #777;
+    border-left: 2px solid #777;
+    border-radius: 8px;
+    padding: 20px 10px;
+    text-align: center;
+    text-decoration: none !important;
+    color: #ff9900 !important;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    box-shadow: 0 6px 0 #000, 0 10px 15px rgba(0,0,0,0.5);
+    transition: all 0.1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
+    text-shadow: 0 0 3px rgba(255, 153, 0, 0.5);
+}
+
+.retro-btn:active {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 #000, inset 0 3px 8px rgba(0,0,0,0.8);
+    border-top: 2px solid #111;
+    border-left: 2px solid #111;
+}
+
+.retro-btn:hover {
+    color: #ffb84d !important;
+}
+
+.retro-btn::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #222;
+    margin-right: 12px;
+    border: 1px solid #111;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
+    transition: background-color 0.1s, box-shadow 0.1s;
+}
+
+.retro-btn:hover::before {
+    background-color: #ff2a2a;
+    box-shadow: 0 0 10px #ff2a2a, inset 0 1px 3px rgba(255,255,255,0.6);
+    border-color: #500;
+}
+
+/* --- Back Button Styling --- */
+.nav-bar-container {
+    margin-bottom: 30px;
+}
+
+.back-btn {
+    display: inline-block;
+    color: #ff9900;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    background: linear-gradient(180deg, #555, #222);
+    border: 2px solid #111;
+    border-top: 2px solid #777;
+    border-left: 2px solid #777;
+    border-radius: 6px;
+    box-shadow: 0 4px 0 #000;
+    transition: all 0.1s ease;
+    text-shadow: 0 0 3px rgba(255, 153, 0, 0.5);
+}
+
+.back-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 #000;
+    border-top: 2px solid #111;
+    border-left: 2px solid #111;
+}
+
+.back-btn:hover {
+    color: #ffb84d;
 }
