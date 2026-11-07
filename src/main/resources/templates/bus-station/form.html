@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: header('Add New Bus Station')}"></head>
+<body>
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<h1>Add New Bus Station</h1>
+
+<!--/*@thymesVar id="busStation" type="com.example.bus_station_management_system.model.BusStation"*/-->
+<form th:action="@{/bus-station}" th:object="${busStation}" method="post">
+    <div>
+        <label for="id">Station ID:</label>
+        <input type="text" id="id" th:field="*{id}" required/>
+    </div>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required/>
+    </div>
+    <div>
+        <label for="city">City:</label>
+        <input type="text" id="city" th:field="*{city}" required/>
+    </div>
+    <br>
+    <button type="submit">Save Station</button>
+    <a th:href="@{/bus-station}">Cancel</a>
+</form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: header('Dashboard')}"></head>
+<body>
+<div class="dashboard">
+    <h1>Management Dashboard</h1>
+
+    <div class="grid-container">
+        <a th:href="@{/bus-station}" class="card">Bus Stations</a>
+        <a th:href="@{/route}" class="card">Routes</a>
+        <a th:href="@{/bus-trip}" class="card">Bus Trips</a>
+        <a th:href="@{/bus}" class="card">Buses</a>
+        <a th:href="@{/passenger}" class="card">Passengers</a>
+        <a th:href="@{/ticket}" class="card">Tickets</a>
+        <a th:href="@{/duty-assignment}" class="card">Duty Assignments</a>
+        <a th:href="@{/driver}" class="card">Drivers</a>
+        <a th:href="@{/trip-manager}" class="card">Trip Managers</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: header('Routes')}"></head>
+<body>
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<h1>Routes</h1>
+<a href="/route/new">Add New Route</a>
+
+<!--/*@thymesVar id="routes" type="java.util.List<com.example.bus_station_management_system.model.Route>"*/-->
+<table>
+    <tr>
+        <th>Route ID</th>
+        <th>Origin Station ID</th>
+        <th>Destination Station ID</th>
+        <th>Distance</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="item : ${routes}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.origin.id}"></td>
+        <td th:text="${item.destination.id}"></td>
+        <td th:text="${item.distance}"></td>
+        <td>
+            <form th:action="@{|/route/${item.id}/delete|}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: header('Add New Bus Trip')}"></head>
+<body>
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<h1>Add New Bus Trip</h1>
+
+<!--/*@thymesVar id="busTrip" type="com.example.bus_station_management_system.model.BusTrip"*/-->
+<form th:action="@{/bus-trip}" th:object="${busTrip}" method="post">
+    <div>
+        <label for="id">Trip ID:</label>
+        <input type="text" id="id" th:field="*{id}" required/>
+    </div>
+    <div>
+        <label for="routeId">Route ID:</label>
+        <input type="text" id="routeId" th:field="*{routeId}" required/>
+    </div>
+    <div>
+        <label for="busId">Bus ID:</label>
+        <input type="text" id="busId" th:field="*{busId}" required/>
+    </div>
+    <div>
+        <label for="startTime">Start Time:</label>
+        <input type="text" id="startTime" th:field="*{startTime}" placeholder="YYYY-MM-DD HH:MM" required/>
+    </div>
+    <div>
+        <label for="status">Status:</label>
+        <select id="status" th:field="*{status}">
+            <option value="Planned">Planned</option>
+            <option value="Active">Active</option>
+            <option value="Completed">Completed</option>
+        </select>
+    </div>
+    <br>
+    <button type="submit">Save Bus Trip</button>
+    <a th:href="@{/bus-trip}">Cancel</a>
+</form>
+</body>
+</html>

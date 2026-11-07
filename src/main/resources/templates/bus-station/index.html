@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: header('Bus Stations')}"></head>
+<body>
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<h1>Bus Stations</h1>
+<a href="/bus-station/new">Add New Station</a>
+
+<!--/*@thymesVar id="busStations" type="java.util.List<com.example.bus_station_management_system.model.BusStation>"*/-->
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="item : ${busStations}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.city}"></td>
+        <td>
+            <form th:action="@{|/bus-station/${item.id}/delete|}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
