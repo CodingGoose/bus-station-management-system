@@ -7,10 +7,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @ResponseBody
-@RequestMapping("/buses")
+@RequestMapping("/bus")
 public class BusController extends BaseController<Bus, String> {
 
     public BusController(BusService service) {
-        super(service);
+        super(service, "bus", "buses");
+    }
+
+    @Override
+    protected Bus createEmptyEntity() {
+        return new Bus();
     }
 }

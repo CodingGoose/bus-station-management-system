@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <!-- Injects the header and CSS from layout.html -->
 <head th:replace="~{fragments/layout :: header('Buses')}">
-    <title>BUNA ZIUA</title>
+    <title>Buses</title>
 </head>
 
 <body>
@@ -28,7 +28,7 @@
         <td th:text="${item.fuelType}"></td>
         <td>
             <form th:action="@{|/bus/${item.id}/delete|}" method="post">
-                <button type="submit">dan</button>
+                <button type="submit">Delete</button>
             </form>
         </td>
     </tr>
