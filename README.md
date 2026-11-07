@@ -13,7 +13,7 @@ The app uses a simple Layered Architecture, following the Controller-Service-Rep
 
 - For ease of development and collaboration, we decided to build one Service and one Controller for each data type. This adherese to the Single Responsibility Principle and ensure that each controller is concerned with traffic from exactly one domain.
 
-- Each Repository, Service, and Controller inherits from a generic base class (`BaseRepository`, `BaseService`, `BaseController`), which encapsulates the common CRUD methods.
+- Each Repository, Service, and Controller inherits from a generic base class (`InMemoryRepository`, `BaseService`, `BaseController`), which encapsulates the common CRUD methods.
 
 - As a temporary storage solution, the repositories utilise HashMaps to store and manage entitiy instances in memory.
 
@@ -22,6 +22,7 @@ To meet the assignment requirements, we expanded three core UML models with addi
 * **Staff:** Added `salary` to manage payroll.
 * **Driver:** Added `decorations` to track cabin flair and keep each driver's personality in mind
 * **Bus:** Added a boolean `hasAC` and a custom Enum `FuelType` to better define the vehicle's hardware specifications.
+  **Design Justification:** We deliberately kept `decorations` as an attribute of the `Driver` rather than the `Bus`. In our domain model, items like family photos or dashboard figures are personal belongings that a driver brings to their shift. When the driver's shift ends and they change vehicles, their decorations leave with them. Therefore, this represents a property of the employee's personal workspace, not the hardware of the vehicle itself.
 
 ## Authors
 
