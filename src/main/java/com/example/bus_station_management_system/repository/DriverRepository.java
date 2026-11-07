@@ -1,6 +1,4 @@
 package com.example.bus_station_management_system.repository;
 import com.example.bus_station_management_system.model.*;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class DriverRepository extends InMemoryRepository<Driver, String> {}
+public interface DriverRepository extends IRepository<Driver, String> {}

@@ -1,6 +1,7 @@
-package com.example.bus_station_management_system.repository;
+package com.example.bus_station_management_system.repository.in_memory;
 
 import com.example.bus_station_management_system.model.Identifiable;
+import com.example.bus_station_management_system.repository.IRepository;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public abstract class InMemoryRepository<T extends Identifiable<V>, V> implements IRepository<T, V>{
+public abstract class InMemoryRepository<T extends Identifiable<V>, V> implements IRepository<T, V> {
 
     // Protected so child classes can access it if custom queries are needed later
     protected Map<V, T> storage = new HashMap<>();

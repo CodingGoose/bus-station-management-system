@@ -1,15 +1,15 @@
 package com.example.bus_station_management_system.service;
 
 import com.example.bus_station_management_system.model.Identifiable;
-import com.example.bus_station_management_system.repository.InMemoryRepository;
+import com.example.bus_station_management_system.repository.IRepository;
 
 import java.util.List;
 
 public abstract class BaseService<T extends Identifiable<ID>, ID> {
 
-    protected final InMemoryRepository<T, ID> repository;
+    protected final IRepository<T, ID> repository;
 
-    public BaseService(InMemoryRepository<T, ID> repository) {
+    public BaseService(IRepository<T, ID> repository) {
         this.repository = repository;
     }
 

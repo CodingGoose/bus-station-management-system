@@ -4,12 +4,12 @@ import com.example.bus_station_management_system.model.Identifiable;
 
 import java.util.List;
 
-public interface IRepository <T extends Identifiable<V>, V>{
-    public T save(T entity);
+public interface IRepository <T extends Identifiable<ID>, ID>{
+    T save(T entity);
 
-    public List<T> findAll();
+    List<T> findAll();
 
-    public T findById(V id);
+    T findById(ID id);
 
-    public void delete(V id);
+    void delete(ID id);
 }
