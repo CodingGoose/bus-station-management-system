@@ -6,6 +6,7 @@ public class DutyAssignment implements Identifiable<String> {
     private String staffId;
     private String role; // e.g., "Primary Driver/Reserve Driver"
 
+    public DutyAssignment(){}
     public DutyAssignment(String id, String tripId, String staffId, String role) {
         this.id = id;
         this.tripId = tripId;

@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/bus-trips")
 public class BusTripController extends BaseController<BusTrip, String> {
     public BusTripController(BusTripService service) {
-        super(service);
+        super(service, "bus-trip", "bus-trips");
+    }
+
+    @Override
+    protected BusTrip createEmptyEntity() {
+        return new BusTrip();
     }
 }

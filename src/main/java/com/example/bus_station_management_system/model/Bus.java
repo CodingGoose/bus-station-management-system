@@ -22,10 +22,6 @@ public class Bus implements Identifiable<String> {
     private FuelType fuelType;
 
     public Bus(){
-        id = "";
-        registrationNumber = "";
-        capacity = -1;
-        status = BusStatus.Down;
     }
     public Bus(String id, String registrationNumber, int capacity, BusStatus status) {
         this.id = id;

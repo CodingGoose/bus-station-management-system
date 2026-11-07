@@ -5,6 +5,7 @@ public abstract class Staff implements Identifiable<String> {
     private String name;
     private int salary;
 
+    public Staff(){}
     public Staff(String id, String name) {
         this.id = id;
         this.name = name;

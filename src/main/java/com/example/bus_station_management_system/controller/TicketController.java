@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/tickets")
 public class TicketController extends BaseController<Ticket, String> {
     public TicketController(TicketService service) {
-        super(service);
+        super(service, "ticket", "tickets");
+    }
+
+    @Override
+    protected Ticket createEmptyEntity() {
+        return new Ticket();
     }
 }

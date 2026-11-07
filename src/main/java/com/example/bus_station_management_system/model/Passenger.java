@@ -9,6 +9,7 @@ public class Passenger implements Identifiable<String> {
     private String currency;
     private List<Ticket> tickets;
 
+    public Passenger(){}
     public Passenger(String id, String name, String currency) {
         this.id = id;
         this.name = name;

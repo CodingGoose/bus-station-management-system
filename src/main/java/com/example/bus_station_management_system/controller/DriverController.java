@@ -11,6 +11,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/drivers")
 public class DriverController extends BaseController<Driver, String> {
     public DriverController(DriverService service) {
-        super(service);
+        super(service, "driver", "drivers");
+    }
+
+    @Override
+    protected Driver createEmptyEntity() {
+        return new Driver();
     }
 }

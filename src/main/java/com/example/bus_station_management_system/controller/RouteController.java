@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/routes")
 public class RouteController extends BaseController<Route, String> {
     public RouteController(RouteService service) {
-        super(service);
+        super(service, "route", "routes");
+    }
+
+    @Override
+    protected Route createEmptyEntity() {
+        return new Route();
     }
 }
