@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!-- Injects the header and CSS from layout.html -->
+<head th:replace="~{fragments/layout :: header('Passengers')}">
+    <title>Passengers</title>
+</head>
+
+<body>
+<!-- Injects the navigation bar -->
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<h1>Passengers</h1>
+<a href="/passenger/new">Add New Bus</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Currency</th>
+        <th>Tickets</th>
+    </tr>
+    <tr th:each="item : ${passengers}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.currency}"></td>
+        <td th:text="${item.tickets}"></td>
+        <td>
+            <form th:action="@{|/passenger/${item.id}/delete|}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: header('Add New Driver')}"></head>
+<body>
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<h1>Add New Driver</h1>
+<!--/*@thymesVar id="driver" type="com.example.bus_station_management_system.model.Driver"*/-->
+<form th:action="@{/driver}" th:object="${driver}" method="post">
+
+    <div>
+        <label for="id">Bus ID:</label>
+        <input type="text" id="id" th:field="*{id}" required/>
+    </div>
+
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" th:field="*{name}" required/>
+    </div>
+
+    <div>
+        <label for="salary">Salary:</label>
+        <input type="number" id="salary" th:field="*{salary}" required/>
+    </div>
+
+    <div>
+        <label for="yearsOfExperience">Years of experience:</label>
+        <input type="number" id="yearsOfExperience" th:field="*{yearsOfExperience}" required/>
+    </div>
+
+    <br>
+    <button type="submit">Save Bus</button>
+    <a th:href="@{/bus}">Cancel</a>
+</form>
+</body>
+</html>

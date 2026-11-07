@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!-- Injects the header and CSS from layout.html -->
+<head th:replace="~{fragments/layout :: header('Duty Assignment')}">
+    <title>Duty Assignment</title>
+</head>
+
+<body>
+<!-- Injects the navigation bar -->
+<div th:replace="~{fragments/layout :: navbar}"></div>
+
+<h1>Duty Assignments</h1>
+<a href="/duty-assignments/new">Add New Bus</a>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Trip ID</th>
+        <th>Staff ID</th>
+        <th>Staff ID</th>
+        <th>Role</th>
+    </tr>
+    <tr th:each="item : ${dutyAssignments}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.tripID}"></td>
+        <td th:text="${item.staffID}"></td>
+        <td th:text="${item.role}"></td>
+        <td>
+            <form th:action="@{|/duty-assignment/${item.id}/delete|}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
