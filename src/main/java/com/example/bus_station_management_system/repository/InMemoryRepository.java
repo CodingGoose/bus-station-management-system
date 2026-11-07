@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public abstract class BaseRepository<T extends Identifiable<V>, V> {
+public abstract class InMemoryRepository<T extends Identifiable<V>, V> implements IRepository<T, V>{
 
     // Protected so child classes can access it if custom queries are needed later
     protected Map<V, T> storage = new HashMap<>();

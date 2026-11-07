@@ -1,16 +1,15 @@
 package com.example.bus_station_management_system.service;
 
 import com.example.bus_station_management_system.model.Identifiable;
-import com.example.bus_station_management_system.repository.BaseRepository;
+import com.example.bus_station_management_system.repository.InMemoryRepository;
 
 import java.util.List;
 
 public abstract class BaseService<T extends Identifiable<ID>, ID> {
 
-    // Using dependency injection for the repository
-    protected final BaseRepository<T, ID> repository;
+    protected final InMemoryRepository<T, ID> repository;
 
-    public BaseService(BaseRepository<T, ID> repository) {
+    public BaseService(InMemoryRepository<T, ID> repository) {
         this.repository = repository;
     }
 

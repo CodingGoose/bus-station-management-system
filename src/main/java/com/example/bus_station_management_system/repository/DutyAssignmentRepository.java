@@ -3,4 +3,4 @@ import com.example.bus_station_management_system.model.*;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class DutyAssignmentRepository extends BaseRepository<DutyAssignment, String> {}
+public class DutyAssignmentRepository extends InMemoryRepository<DutyAssignment, String> {}

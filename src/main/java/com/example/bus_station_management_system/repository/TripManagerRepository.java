@@ -3,4 +3,4 @@ import com.example.bus_station_management_system.model.*;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class TripManagerRepository extends BaseRepository<TripManager, String> {}
+public class TripManagerRepository extends InMemoryRepository<TripManager, String> {}
