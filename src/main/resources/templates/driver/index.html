@@ -6,11 +6,10 @@
 </head>
 
 <body>
-<!-- Injects the navigation bar -->
-<div th:replace="~{fragments/layout :: navbar}"></div>
 
 <h1>Drivers</h1>
-<a href="/driver/new">Add New Driver</a>
+<div th:replace="~{fragments/layout :: action-bar('/driver')}"></div>
+<!--<a href="/driver/new">Add New Driver</a>-->
 <table>
     <tr>
         <th>ID</th>

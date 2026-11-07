@@ -9,15 +9,13 @@
 </head>
 <body>
 
-<nav th:fragment="navbar">
-<!--    <a href="/">Home</a> |-->
-<!--    <a href="/bus">Buses</a> |-->
-<!--    <a href="/route">Routes</a> |-->
-<!--    <a href="/passenger">Passengers</a>-->
-</nav>
-
 <div th:fragment="back-button" class="nav-bar-container">
     <a href="/" class="back-btn">&larr; BACK TO DASHBOARD</a>
+</div>
+
+<div th:fragment="action-bar(newUrl)" class="action-bar">
+    <a href="/" class="retro-action-btn">&larr; BACK TO DASHBOARD</a>
+    <a th:href="@{__${newUrl}__/new}" class="retro-action-btn add-btn">+ ADD NEW</a>
 </div>
 
 </body>

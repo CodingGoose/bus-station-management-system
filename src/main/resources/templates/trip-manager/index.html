@@ -6,11 +6,10 @@
 </head>
 
 <body>
-<!-- Injects the navigation bar -->
-<div th:replace="~{fragments/layout :: navbar}"></div>
 
 <h1>Trip Manager</h1>
-<a href="/trip-manager/new">Add New Trip Manager</a>
+<div th:replace="~{fragments/layout :: action-bar('/trip-manager')}"></div>
+<!--<a href="/trip-manager/new">Add New Trip Manager</a>-->
 <table>
     <tr>
         <th>ID</th>

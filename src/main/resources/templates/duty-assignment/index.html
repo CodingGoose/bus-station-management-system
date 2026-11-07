@@ -6,11 +6,10 @@
 </head>
 
 <body>
-<!-- Injects the navigation bar -->
-<div th:replace="~{fragments/layout :: navbar}"></div>
 
 <h1>Duty Assignments</h1>
-<a href="/duty-assignment/new">Add New Duty Assignment</a>
+<div th:replace="~{fragments/layout :: action-bar('/duty-assignment')}"></div>
+<!--<a href="/duty-assignment/new">Add New Duty Assignment</a>-->
 <table>
     <tr>
         <th>ID</th>

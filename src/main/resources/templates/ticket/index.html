@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/layout :: header('Tickets')}"></head>
 <body>
-<div th:replace="~{fragments/layout :: navbar}"></div>
+
 
 <h1>Tickets</h1>
-<a href="/ticket/new">Add New Ticket</a>
+<div th:replace="~{fragments/layout :: action-bar('/ticket')}"></div>
+<!--<a href="/ticket/new">Add New Ticket</a>-->
 
 <!--/*@thymesVar id="tickets" type="java.util.List<com.example.bus_station_management_system.model.Ticket>"*/-->
 <table>
