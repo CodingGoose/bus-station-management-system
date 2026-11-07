@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/drivers")
 public class DriverController extends BaseController<Driver, String> {
     public DriverController(DriverService service) {
-        super(service, "driver", "drivers");
+        super(service, "driver", "driver",  "drivers");
     }
 
     @Override

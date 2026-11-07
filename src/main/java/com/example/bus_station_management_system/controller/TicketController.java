@@ -6,10 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/tickets")
+@RequestMapping("/ticket")
 public class TicketController extends BaseController<Ticket, String> {
     public TicketController(TicketService service) {
-        super(service, "ticket", "tickets");
+        super(service, "ticket", "ticket",  "tickets");
     }
 
     @Override

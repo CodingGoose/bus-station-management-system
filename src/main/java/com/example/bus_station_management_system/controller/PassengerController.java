@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/passengers")
 public class PassengerController extends BaseController<Passenger, String> {
     public PassengerController(PassengerService service) {
-        super(service, "passenger", "passengers");
+        super(service, "passenger", "passenger",  "passengers");
     }
 
     @Override

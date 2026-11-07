@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class BusController extends BaseController<Bus, String> {
 
     public BusController(BusService service) {
-        super(service, "bus", "buses");
+        super(service, "bus", "bus", "buses");
     }
 
     @Override
