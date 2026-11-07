@@ -1,0 +1,19 @@
+<!-- src/main/resources/templates/fragments/layout.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="EN">
+<head th:fragment="header(title)">
+    <meta charset="UTF-8">
+    <title th:text="${title}">Bus Management</title>
+    <!-- Put your CSS links here once, and all pages get them -->
+    <style> body { font-family: sans-serif; } table { border-collapse: collapse; } td, th { border: 1px solid black; padding: 8px; } </style>
+</head>
+<body>
+
+<nav th:fragment="navbar">
+    <a href="/bus">Buses</a> |
+    <a href="/route">Routes</a> |
+    <a href="/passenger">Passengers</a>
+</nav>
+
+</body>
+</html>
