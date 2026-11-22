@@ -8,4 +8,9 @@ public class PassengerService extends BaseService<Passenger> {
     public PassengerService(IRepository<Passenger> repository) {
         super(repository);
     }
+
+    @Override
+    protected String label(Passenger passenger) {
+        return passenger.getName();
+    }
 }

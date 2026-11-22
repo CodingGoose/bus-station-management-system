@@ -1,34 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <!-- Injects the header and CSS from layout.html -->
-<head th:replace="~{fragments/layout :: header('Trip Manager')}">
-    <title>Staff</title>
+<head th:replace="~{fragments/layout :: header('Trip Managers')}">
+    <title>Trip Managers</title>
 </head>
 
 <body>
 
-<h1>Trip Manager</h1>
+<h1>Trip Managers</h1>
 <div th:replace="~{fragments/layout :: action-bar('/trip-manager')}"></div>
-<!--<a href="/trip-manager/new">Add New Trip Manager</a>-->
+<!-- Only the most important columns; everything else is on the details page -->
 <table>
     <tr>
-        <th>ID</th>
         <th>Name</th>
-        <th>Salary</th>
-        <th>Employee Code</th>
-        <th>Assignments</th>
+        <th>Actions</th>
     </tr>
     <tr th:each="item : ${tripManagers}">
-        <td th:text="${item.id}"></td>
         <td th:text="${item.name}"></td>
-        <td th:text="${item.salary}"></td>
-        <td th:text="${item.employeeCode}"></td>
-        <td th:text="${item.assignments}"></td>
-        <td>
-            <form th:action="@{|/trip-manager/${item.id}/delete|}" method="post">
-                <button type="submit">Delete</button>
-            </form>
-        </td>
+        <td th:replace="~{fragments/layout :: row-actions('/trip-manager', ${item.id})}"></td>
     </tr>
 </table>
 </body>

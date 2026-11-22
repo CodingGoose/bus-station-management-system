@@ -8,4 +8,9 @@ public class DriverService extends BaseService<Driver> {
     public DriverService(IRepository<Driver> repository) {
         super(repository);
     }
+
+    @Override
+    protected String label(Driver driver) {
+        return driver.getName();
+    }
 }

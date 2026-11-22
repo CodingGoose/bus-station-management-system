@@ -18,5 +18,25 @@
     <a th:href="@{__${newUrl}__/new}" class="retro-action-btn add-btn">+ ADD NEW</a>
 </div>
 
+<!-- Last cell of every list row: Details, Edit and Delete for one entity -->
+<td th:fragment="row-actions(baseUrl, id)">
+    <a th:href="@{|${baseUrl}/${id}|}" class="retro-action-btn">Details</a>
+    <a th:href="@{|${baseUrl}/${id}/edit|}" class="retro-action-btn">Edit</a>
+    <form th:action="@{|${baseUrl}/${id}/delete|}" method="post">
+        <button type="submit">Delete</button>
+    </form>
+</td>
+
+<!-- Top bar of every details page: back to the list, plus Edit and Delete -->
+<div th:fragment="details-bar(baseUrl, id)" class="action-bar">
+    <a th:href="@{${baseUrl}}" class="retro-action-btn">&larr; BACK TO LIST</a>
+    <div class="details-actions">
+        <a th:href="@{|${baseUrl}/${id}/edit|}" class="retro-action-btn">Edit</a>
+        <form th:action="@{|${baseUrl}/${id}/delete|}" method="post">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+</div>
+
 </body>
 </html>

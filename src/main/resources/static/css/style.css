@@ -196,16 +196,27 @@ tr:hover {
 }
 
 /* Delete Button Inside Tables */
-td form {
+td form,
+.details-actions form {
     background: none;
     padding: 0;
     box-shadow: none;
     border: none;
     margin: 0;
     max-width: none;
+    display: inline-block; /* Keeps Delete on the same line as Edit */
 }
 
-td form button {
+/* Edit Button Inside Tables (same size as Delete) */
+td .retro-action-btn,
+.details-actions .retro-action-btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+
+td form button[type="submit"], /* [type] needed to beat the general button[type="submit"] rule */
+.details-actions form button[type="submit"] {
     padding: 8px 15px;
     font-size: 0.9em;
     color: #ff2a2a; /* Warning Red for Delete */

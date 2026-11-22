@@ -1,32 +1,25 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/layout :: header('Routes')}"></head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!-- Injects the header and CSS from layout.html -->
+<head th:replace="~{fragments/layout :: header('Routes')}">
+    <title>Routes</title>
+</head>
 
+<body>
 
 <h1>Routes</h1>
 <div th:replace="~{fragments/layout :: action-bar('/route')}"></div>
-<!--<a href="/route/new">Add New Route</a>-->
-
-<!--/*@thymesVar id="routes" type="java.util.List<com.example.bus_station_management_system.model.Route>"*/-->
+<!-- Only the most important columns; everything else is on the details page -->
 <table>
     <tr>
-        <th>Route ID</th>
-        <th>Origin Station ID</th>
-        <th>Destination Station ID</th>
-        <th>Distance</th>
+        <th>Origin</th>
+        <th>Destination</th>
         <th>Actions</th>
     </tr>
     <tr th:each="item : ${routes}">
-        <td th:text="${item.id}"></td>
-        <td th:text="${item.origin.id}"></td>
-        <td th:text="${item.destination.id}"></td>
-        <td th:text="${item.distance}"></td>
-        <td>
-            <form th:action="@{|/route/${item.id}/delete|}" method="post">
-                <button type="submit">Delete</button>
-            </form>
-        </td>
+        <td th:text="${stationLabels.getOrDefault(item.origin?.id, '-')}"></td>
+        <td th:text="${stationLabels.getOrDefault(item.destination?.id, '-')}"></td>
+        <td th:replace="~{fragments/layout :: row-actions('/route', ${item.id})}"></td>
     </tr>
 </table>
 </body>

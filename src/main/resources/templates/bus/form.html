@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/layout :: header('Add New Bus')}"></head>
+<head th:replace="~{fragments/layout :: header(${isEdit} ? 'Edit Bus' : 'Add New Bus')}"></head>
 <body>
 
-<h1>Add New Bus</h1>
+<h1 th:text="${isEdit} ? 'Edit Bus' : 'Add New Bus'">Add New Bus</h1>
 <!--/*@thymesVar id="bus" type="com.example.bus_station_management_system.model.Bus"*/-->
-<form th:action="@{/bus}" th:object="${bus}" method="post">
-
-    <div>
-        <label for="id">Bus ID:</label>
-        <input type="text" id="id" th:field="*{id}" required/>
-    </div>
+<form th:action="${isEdit} ? @{|/bus/${bus.id}|} : @{/bus}" th:object="${bus}" method="post">
 
     <div>
         <label for="registrationNumber">Registration Number:</label>

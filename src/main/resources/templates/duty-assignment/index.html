@@ -1,33 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <!-- Injects the header and CSS from layout.html -->
-<head th:replace="~{fragments/layout :: header('Duty Assignment')}">
-    <title>Duty Assignment</title>
+<head th:replace="~{fragments/layout :: header('Duty Assignments')}">
+    <title>Duty Assignments</title>
 </head>
 
 <body>
 
 <h1>Duty Assignments</h1>
 <div th:replace="~{fragments/layout :: action-bar('/duty-assignment')}"></div>
-<!--<a href="/duty-assignment/new">Add New Duty Assignment</a>-->
+<!-- Only the most important columns; everything else is on the details page -->
 <table>
     <tr>
-        <th>ID</th>
-        <th>Trip ID</th>
-        <th>Staff ID</th>
-        <th>Staff ID</th>
-        <th>Role</th>
+        <th>Staff</th>
+        <th>Trip</th>
+        <th>Actions</th>
     </tr>
     <tr th:each="item : ${dutyAssignments}">
-        <td th:text="${item.id}"></td>
-        <td th:text="${item.tripId}"></td>
-        <td th:text="${item.staffId}"></td>
-        <td th:text="${item.role}"></td>
-        <td>
-            <form th:action="@{|/duty-assignment/${item.id}/delete|}" method="post">
-                <button type="submit">Delete</button>
-            </form>
-        </td>
+        <td th:text="${staffLabels.getOrDefault(item.staffId, '-')}"></td>
+        <td th:text="${tripLabels.getOrDefault(item.tripId, '-')}"></td>
+        <td th:replace="~{fragments/layout :: row-actions('/duty-assignment', ${item.id})}"></td>
     </tr>
 </table>
 </body>

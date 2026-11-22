@@ -1,29 +1,25 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/layout :: header('Bus Stations')}"></head>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!-- Injects the header and CSS from layout.html -->
+<head th:replace="~{fragments/layout :: header('Bus Stations')}">
+    <title>Bus Stations</title>
+</head>
+
 <body>
 
 <h1>Bus Stations</h1>
 <div th:replace="~{fragments/layout :: action-bar('/bus-station')}"></div>
-<!--<a href="/bus-station/new">Add New Station</a>-->
-
-<!--/*@thymesVar id="busStations" type="java.util.List<com.example.bus_station_management_system.model.BusStation>"*/-->
+<!-- Only the most important columns; everything else is on the details page -->
 <table>
     <tr>
-        <th>ID</th>
         <th>Name</th>
         <th>City</th>
         <th>Actions</th>
     </tr>
     <tr th:each="item : ${busStations}">
-        <td th:text="${item.id}"></td>
         <td th:text="${item.name}"></td>
         <td th:text="${item.city}"></td>
-        <td>
-            <form th:action="@{|/bus-station/${item.id}/delete|}" method="post">
-                <button type="submit">Delete</button>
-            </form>
-        </td>
+        <td th:replace="~{fragments/layout :: row-actions('/bus-station', ${item.id})}"></td>
     </tr>
 </table>
 </body>

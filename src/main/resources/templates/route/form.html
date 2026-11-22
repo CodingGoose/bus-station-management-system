@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/layout :: header('Add New Route')}"></head>
+<head th:replace="~{fragments/layout :: header(${isEdit} ? 'Edit Route' : 'Add New Route')}"></head>
 <body>
 
 
-<h1>Add New Route</h1>
+<h1 th:text="${isEdit} ? 'Edit Route' : 'Add New Route'">Add New Route</h1>
 
 <!--/*@thymesVar id="route" type="com.example.bus_station_management_system.model.Route"*/-->
-<form th:action="@{/route}" th:object="${route}" method="post">
+<form th:action="${isEdit} ? @{|/route/${route.id}|} : @{/route}" th:object="${route}" method="post">
     <div>
-        <label for="id">Route ID:</label>
-        <input type="text" id="id" th:field="*{id}" required/>
+        <label for="originId">Origin Station:</label>
+        <select id="originId" th:field="*{origin.id}" required>
+            <option value="">-- Select an origin station --</option>
+            <option th:each="entry : ${stationLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
+        </select>
     </div>
     <div>
-        <label for="originId">Origin Station ID:</label>
-        <input type="text" id="originId" th:field="*{origin.id}" required/>
-    </div>
-    <div>
-        <label for="destinationId">Destination Station ID:</label>
-        <input type="text" id="destinationId" th:field="*{destination.id}" required/>
+        <label for="destinationId">Destination Station:</label>
+        <select id="destinationId" th:field="*{destination.id}" required>
+            <option value="">-- Select a destination station --</option>
+            <option th:each="entry : ${stationLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
+        </select>
     </div>
     <div>
         <label for="distance">Distance:</label>

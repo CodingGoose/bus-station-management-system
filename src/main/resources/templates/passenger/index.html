@@ -7,27 +7,17 @@
 
 <body>
 
-
 <h1>Passengers</h1>
 <div th:replace="~{fragments/layout :: action-bar('/passenger')}"></div>
-<!--<a href="/passenger/new">Add New Passenger</a>-->
+<!-- Only the most important columns; everything else is on the details page -->
 <table>
     <tr>
-        <th>ID</th>
         <th>Name</th>
-        <th>Currency</th>
-        <th>Tickets</th>
+        <th>Actions</th>
     </tr>
     <tr th:each="item : ${passengers}">
-        <td th:text="${item.id}"></td>
         <td th:text="${item.name}"></td>
-        <td th:text="${item.currency}"></td>
-        <td th:text="${item.tickets}"></td>
-        <td>
-            <form th:action="@{|/passenger/${item.id}/delete|}" method="post">
-                <button type="submit">Delete</button>
-            </form>
-        </td>
+        <td th:replace="~{fragments/layout :: row-actions('/passenger', ${item.id})}"></td>
     </tr>
 </table>
 </body>

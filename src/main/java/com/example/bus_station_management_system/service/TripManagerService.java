@@ -8,4 +8,9 @@ public class TripManagerService extends BaseService<TripManager> {
     public TripManagerService(IRepository<TripManager> repository) {
         super(repository);
     }
+
+    @Override
+    protected String label(TripManager tripManager) {
+        return tripManager.getName();
+    }
 }

@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments/layout :: header('Add New Duty Assignment')}"></head>
+<head th:replace="~{fragments/layout :: header(${isEdit} ? 'Edit Duty Assignment' : 'Add New Duty Assignment')}"></head>
 <body>
 
-<h1>Add New Duty Assignment</h1>
+<h1 th:text="${isEdit} ? 'Edit Duty Assignment' : 'Add New Duty Assignment'">Add New Duty Assignment</h1>
 <!--/*@thymesVar id="dutyAssignment" type="com.example.bus_station_management_system.model.DutyAssignment"*/-->
-<form th:action="@{/duty-assignment}" th:object="${dutyAssignment}" method="post">
+<form th:action="${isEdit} ? @{|/duty-assignment/${dutyAssignment.id}|} : @{/duty-assignment}" th:object="${dutyAssignment}" method="post">
 
     <div>
-        <label for="id">Assignment ID:</label>
-        <input type="text" id="id" th:field="*{id}" required/>
+        <label for="tripID">Trip:</label>
+        <select id="tripID" th:field="*{tripId}" required>
+            <option value="">-- Select a trip --</option>
+            <option th:each="entry : ${tripLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
+        </select>
     </div>
 
     <div>
-        <label for="tripID">Trip ID:</label>
-        <input type="text" id="tripID" th:field="*{tripId}" required/>
-    </div>
-
-    <div>
-        <label for="staffID">Staff ID:</label>
-        <input type="text" id="staffID" th:field="*{staffId}" required/>
+        <label for="staffID">Staff:</label>
+        <select id="staffID" th:field="*{staffId}" required>
+            <option value="">-- Select a staff member --</option>
+            <option th:each="entry : ${staffLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
+        </select>
     </div>
 
     <div>

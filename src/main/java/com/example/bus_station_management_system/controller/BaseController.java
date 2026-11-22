@@ -21,15 +21,20 @@ public abstract class BaseController<T extends Identifiable> {
 
     protected abstract T createEmptyEntity();
 
+    protected void addReferenceData(Model model) {
+    }
+
     @GetMapping
     public String getAll(Model model) {
         model.addAttribute(listName, service.findAll());
+        addReferenceData(model);
         return folderName + "/index";
     }
 
     @GetMapping("/new")
     public String showCreateForm(Model model) {
         model.addAttribute(modelName, createEmptyEntity());
+        addReferenceData(model);
         return folderName + "/form";
     }
 
@@ -45,10 +50,18 @@ public abstract class BaseController<T extends Identifiable> {
         return "redirect:/" + folderName;
     }
 
+    @GetMapping("/{id}")
+    public String showDetails(@PathVariable String id, Model model) {
+        model.addAttribute(modelName, service.findById(id));
+        addReferenceData(model);
+        return folderName + "/details";
+    }
+
     @GetMapping("/{id}/edit")
     public String showEditForm(@PathVariable String id, Model model) {
         model.addAttribute(modelName, service.findById(id));
         model.addAttribute("isEdit", true);
+        addReferenceData(model);
         return folderName + "/form";
     }
 

@@ -9,4 +9,9 @@ public class BusService extends BaseService<Bus> {
     public BusService(IRepository<Bus> repository) {
         super(repository);
     }
+
+    @Override
+    protected String label(Bus bus) {
+        return bus.getRegistrationNumber();
+    }
 }

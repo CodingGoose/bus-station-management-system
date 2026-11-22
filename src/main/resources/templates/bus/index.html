@@ -9,27 +9,17 @@
 
 <h1>Bus Fleet</h1>
 <div th:replace="~{fragments/layout :: action-bar('/bus')}"></div>
-<!--<a href="/bus/new">Add New Bus</a>-->
+<!-- Only the most important columns; everything else is on the details page -->
 <table>
     <tr>
-        <th>ID</th>
         <th>Reg. Number</th>
-        <th>Capacity</th>
-        <th>hasAC</th>
-        <th>Fuel Type</th>
+        <th>Status</th>
         <th>Actions</th>
     </tr>
     <tr th:each="item : ${buses}">
-        <td th:text="${item.id}"></td>
         <td th:text="${item.registrationNumber}"></td>
-        <td th:text="${item.capacity}"></td>
-        <td th:text="${item.hasAC}"></td>
-        <td th:text="${item.fuelType}"></td>
-        <td>
-            <form th:action="@{|/bus/${item.id}/delete|}" method="post">
-                <button type="submit">Delete</button>
-            </form>
-        </td>
+        <td th:text="${item.status}"></td>
+        <td th:replace="~{fragments/layout :: row-actions('/bus', ${item.id})}"></td>
     </tr>
 </table>
 </body>
