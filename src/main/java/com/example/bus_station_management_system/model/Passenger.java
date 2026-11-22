@@ -3,7 +3,7 @@ package com.example.bus_station_management_system.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Passenger implements Identifiable<String> {
+public class Passenger implements Identifiable {
     private String id;
     private String name;
     private String currency;

@@ -1,6 +1,6 @@
 package com.example.bus_station_management_system.model;
 
-public abstract class Staff implements Identifiable<String> {
+public abstract class Staff implements Identifiable {
     private String id;
     private String name;
     private int salary;

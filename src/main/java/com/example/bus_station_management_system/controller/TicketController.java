@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/ticket")
-public class TicketController extends BaseController<Ticket, String> {
+public class TicketController extends BaseController<Ticket> {
     public TicketController(TicketService service) {
         super(service, "ticket", "ticket",  "tickets");
     }

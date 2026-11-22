@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/route")
-public class RouteController extends BaseController<Route, String> {
+public class RouteController extends BaseController<Route> {
     public RouteController(RouteService service) {
         super(service, "route", "route",  "routes");
     }

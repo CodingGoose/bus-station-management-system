@@ -1,11 +1,11 @@
 package com.example.bus_station_management_system.service;
-import com.example.bus_station_management_system.model.*;
-import com.example.bus_station_management_system.repository.*;
+import com.example.bus_station_management_system.model.Passenger;
+import com.example.bus_station_management_system.repository.IRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PassengerService extends BaseService<Passenger, String> {
-    public PassengerService(PassengerRepository repository) {
+public class PassengerService extends BaseService<Passenger> {
+    public PassengerService(IRepository<Passenger> repository) {
         super(repository);
     }
 }

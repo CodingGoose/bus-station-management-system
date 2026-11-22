@@ -2,7 +2,7 @@ package com.example.bus_station_management_system.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Route implements Identifiable<String> {
+public class Route implements Identifiable {
     private String id;
     private BusStation origin;
     private BusStation destination;

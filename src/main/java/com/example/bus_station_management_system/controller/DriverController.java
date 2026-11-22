@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/driver")
-public class DriverController extends BaseController<Driver, String> {
+public class DriverController extends BaseController<Driver> {
     public DriverController(DriverService service) {
         super(service, "driver", "driver",  "drivers");
     }

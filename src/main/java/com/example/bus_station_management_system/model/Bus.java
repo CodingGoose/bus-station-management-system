@@ -1,6 +1,6 @@
 package com.example.bus_station_management_system.model;
 
-public class Bus implements Identifiable<String> {
+public class Bus implements Identifiable {
 
     public enum FuelType {
         Gasoline,

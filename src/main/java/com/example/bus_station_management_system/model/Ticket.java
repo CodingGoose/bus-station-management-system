@@ -1,6 +1,6 @@
 package com.example.bus_station_management_system.model;
 
-public class Ticket implements Identifiable<String> {
+public class Ticket implements Identifiable {
     private String id;
     private String tripId;
     private String passengerId;

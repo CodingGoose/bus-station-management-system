@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BusTrip implements Identifiable<String> {
+public class BusTrip implements Identifiable {
 
     public enum TripStatus {
         Planned,

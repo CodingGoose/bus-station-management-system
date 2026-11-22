@@ -1,6 +1,6 @@
 package com.example.bus_station_management_system.model;
 
-public class DutyAssignment implements Identifiable<String> {
+public class DutyAssignment implements Identifiable {
     public enum RoleType {
         PrimaryDriver,
         ReserveDriver
