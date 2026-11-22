@@ -1,0 +1,72 @@
+[
+  {
+    "id": "3f233464-434d-4a57-a329-5cd773446b6b",
+    "routeId": "e25a2f85-6a37-4bad-8034-667a49e53df5",
+    "busId": "228d5586-97b8-4385-a108-cb6d2dbd98a0",
+    "startTime": "2026-11-15T07:30:00",
+    "status": "Completed"
+  },
+  {
+    "id": "82bc3a3e-14a2-4ef5-bf03-3725ad822fee",
+    "routeId": "e90c2cf8-8e99-4adf-90b3-b2661bea11d0",
+    "busId": "42eac64b-f357-424f-a737-58da6b284315",
+    "startTime": "2026-11-18T09:00:00",
+    "status": "Completed"
+  },
+  {
+    "id": "316896db-acfb-4209-a760-3c2dc4d5df3a",
+    "routeId": "1dfd491c-7f49-4756-93f6-8310e95945db",
+    "busId": "2f149026-f317-4221-8130-dde6aad5c5c4",
+    "startTime": "2026-11-20T14:15:00",
+    "status": "Completed"
+  },
+  {
+    "id": "8f8e8bae-2918-435e-b907-ab81cf07258b",
+    "routeId": "1f231ea8-f455-44e3-9ee4-4be0d9c025d8",
+    "busId": "e89aad4c-c517-4bcf-a0dd-038bb3c2dd98",
+    "startTime": "2026-11-22T06:45:00",
+    "status": "Active"
+  },
+  {
+    "id": "de57fb35-6954-4940-9da1-cf67391bfc77",
+    "routeId": "44769535-816e-45e1-83ad-35ab599bc1d9",
+    "busId": "43939f5f-8cb1-4979-8f42-cd004f656b21",
+    "startTime": "2026-11-22T10:00:00",
+    "status": "Active"
+  },
+  {
+    "id": "a26f256e-ff09-4c69-a333-e09fa5779392",
+    "routeId": "3b6f9a9e-8b44-47dd-b633-c7167b1a5cb3",
+    "busId": "1a7de802-cf66-4d7b-a604-b13488d3bc11",
+    "startTime": "2026-11-25T08:30:00",
+    "status": "Planned"
+  },
+  {
+    "id": "e44bc767-3a83-4476-8f45-db99f13aba7f",
+    "routeId": "a83b80ac-fd7f-43a2-8cfe-4d26a8a3013e",
+    "busId": "a75ff8e9-8828-45ad-9324-7a1ee8a0a735",
+    "startTime": "2026-11-28T12:00:00",
+    "status": "Planned"
+  },
+  {
+    "id": "19798749-abc8-4431-97a2-cfa97111b5eb",
+    "routeId": "6a601a67-419c-4511-b57f-9e6bc86416ef",
+    "busId": "a0b919cb-ef8f-4568-9d5b-d2cc89691e21",
+    "startTime": "2026-12-02T06:00:00",
+    "status": "Planned"
+  },
+  {
+    "id": "9a01e559-f1ab-4067-a7a1-8ad9c42d9827",
+    "routeId": "64a8a38c-331b-4b69-adb8-187e40891d85",
+    "busId": "b3466a82-0df0-4663-a7d2-364fc0d14ee4",
+    "startTime": "2026-12-05T16:45:00",
+    "status": "Planned"
+  },
+  {
+    "id": "e6ed21d5-bbd6-4311-b244-b04edf2ea277",
+    "routeId": "0b900e09-0eba-4fd9-8082-e2bc63fc00c6",
+    "busId": "228d5586-97b8-4385-a108-cb6d2dbd98a0",
+    "startTime": "2026-12-10T19:00:00",
+    "status": "Planned"
+  }
+]

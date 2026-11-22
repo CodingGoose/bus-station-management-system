@@ -1,0 +1,107 @@
+[
+  {
+    "id": "be1d80f1-417e-42cc-8ff3-f5325867397b",
+    "tripId": "3f233464-434d-4a57-a329-5cd773446b6b",
+    "passengerId": "3d6b3be2-4e16-4b43-a5b9-db169317ff47",
+    "seatNumber": "12",
+    "price": 110
+  },
+  {
+    "id": "d7880ce8-1414-4908-bc8f-b68758e3b4bb",
+    "tripId": "3f233464-434d-4a57-a329-5cd773446b6b",
+    "passengerId": "8edf7c9c-e19d-4e68-b553-177420ef30e8",
+    "seatNumber": "13",
+    "price": 110
+  },
+  {
+    "id": "6572001f-915a-4d01-bd71-f64a6ee60567",
+    "tripId": "3f233464-434d-4a57-a329-5cd773446b6b",
+    "passengerId": "8c04ca24-c6ca-4c7a-9bee-dc3dc5cdbdda",
+    "seatNumber": "1",
+    "price": 110
+  },
+  {
+    "id": "fa4bd08e-94a6-4229-b8e4-efd557a494ca",
+    "tripId": "82bc3a3e-14a2-4ef5-bf03-3725ad822fee",
+    "passengerId": "aec633e1-428a-4258-85ea-10ded93b28cc",
+    "seatNumber": "5",
+    "price": 45
+  },
+  {
+    "id": "488ac5c7-20a8-425a-b2c0-e25e5d038a74",
+    "tripId": "316896db-acfb-4209-a760-3c2dc4d5df3a",
+    "passengerId": "7a894149-f816-4208-b37c-039d94fa7776",
+    "seatNumber": "20",
+    "price": 40
+  },
+  {
+    "id": "944e5741-5803-4c16-a41f-f21d3eba0dff",
+    "tripId": "8f8e8bae-2918-435e-b907-ab81cf07258b",
+    "passengerId": "158ba6ba-30d9-4351-b505-3a75c277b280",
+    "seatNumber": "3",
+    "price": 28
+  },
+  {
+    "id": "2ed02961-0c66-4067-bf3f-3994bb77d267",
+    "tripId": "de57fb35-6954-4940-9da1-cf67391bfc77",
+    "passengerId": "3d6b3be2-4e16-4b43-a5b9-db169317ff47",
+    "seatNumber": "7",
+    "price": 38
+  },
+  {
+    "id": "985a92a2-535c-41cd-b24b-a278ed76d172",
+    "tripId": "a26f256e-ff09-4c69-a333-e09fa5779392",
+    "passengerId": "c941adb3-785c-4fe7-9284-6b65aa9d75b7",
+    "seatNumber": "15",
+    "price": 42
+  },
+  {
+    "id": "48b10268-eb52-49d1-b222-61e0b31c62e6",
+    "tripId": "a26f256e-ff09-4c69-a333-e09fa5779392",
+    "passengerId": "c2e7f03d-c3ee-4b1e-ab59-a130dfd1057d",
+    "seatNumber": "16",
+    "price": 42
+  },
+  {
+    "id": "330b9845-647d-4420-a565-27b0e0750392",
+    "tripId": "e44bc767-3a83-4476-8f45-db99f13aba7f",
+    "passengerId": "5d971190-2502-4031-a9e1-fbc2cd438ac8",
+    "seatNumber": "22",
+    "price": 43
+  },
+  {
+    "id": "8e08bada-4ab0-4652-a843-546f08a08a6f",
+    "tripId": "19798749-abc8-4431-97a2-cfa97111b5eb",
+    "passengerId": "c4a65953-b181-4d8f-80c6-80a41dda5222",
+    "seatNumber": "30",
+    "price": 98
+  },
+  {
+    "id": "77579483-d03e-4ebf-8ae6-cc02fa95954b",
+    "tripId": "9a01e559-f1ab-4067-a7a1-8ad9c42d9827",
+    "passengerId": "8edf7c9c-e19d-4e68-b553-177420ef30e8",
+    "seatNumber": "44",
+    "price": 56
+  },
+  {
+    "id": "63e1b580-bb81-42fa-8878-40ed55cd6ad2",
+    "tripId": "9a01e559-f1ab-4067-a7a1-8ad9c42d9827",
+    "passengerId": "8c04ca24-c6ca-4c7a-9bee-dc3dc5cdbdda",
+    "seatNumber": "45",
+    "price": 56
+  },
+  {
+    "id": "94ba4857-86a3-41e2-8e09-fe18cab19fe7",
+    "tripId": "e6ed21d5-bbd6-4311-b244-b04edf2ea277",
+    "passengerId": "aec633e1-428a-4258-85ea-10ded93b28cc",
+    "seatNumber": "8",
+    "price": 25
+  },
+  {
+    "id": "f72a8b81-faaf-4756-9ced-9944f2e23e99",
+    "tripId": "e6ed21d5-bbd6-4311-b244-b04edf2ea277",
+    "passengerId": "158ba6ba-30d9-4351-b505-3a75c277b280",
+    "seatNumber": "9",
+    "price": 25
+  }
+]

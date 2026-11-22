@@ -1,0 +1,93 @@
+[
+  {
+    "id": "066adab3-4fdc-470f-a0c7-9173251f2045",
+    "name": "Ion Popescu",
+    "salary": 5200,
+    "yearsOfExperience": 18,
+    "decorations": [
+      "Family photo",
+      "Rosary"
+    ]
+  },
+  {
+    "id": "d9284191-0377-4fba-a74d-535ab3d9dfc0",
+    "name": "Mihai Ionescu",
+    "salary": 4800,
+    "yearsOfExperience": 11,
+    "decorations": [
+      "Football scarf"
+    ]
+  },
+  {
+    "id": "1ce43171-6e73-4701-97cb-4f02336530ae",
+    "name": "Andrei Muresan",
+    "salary": 4500,
+    "yearsOfExperience": 6,
+    "decorations": []
+  },
+  {
+    "id": "713d8c0b-4903-42e9-b26b-a076e13df964",
+    "name": "Vasile Dumitru",
+    "salary": 6100,
+    "yearsOfExperience": 25,
+    "decorations": [
+      "Dashboard figure",
+      "Pine air freshener",
+      "Map of Romania"
+    ]
+  },
+  {
+    "id": "c14fa2c2-4370-4995-86ff-56f4887e7934",
+    "name": "Gheorghe Stan",
+    "salary": 5600,
+    "yearsOfExperience": 20,
+    "decorations": [
+      "Family photo"
+    ]
+  },
+  {
+    "id": "b2a68897-3c61-4032-b739-c58dac648fc1",
+    "name": "Cristian Rusu",
+    "salary": 4300,
+    "yearsOfExperience": 3,
+    "decorations": []
+  },
+  {
+    "id": "15869ba8-b239-4771-a1c1-ddf533adc413",
+    "name": "Florin Matei",
+    "salary": 4900,
+    "yearsOfExperience": 9,
+    "decorations": [
+      "Lucky coin"
+    ]
+  },
+  {
+    "id": "80a3ad04-4734-4c64-8172-916226be674d",
+    "name": "Radu Ciobanu",
+    "salary": 5000,
+    "yearsOfExperience": 13,
+    "decorations": [
+      "Dog photo",
+      "Bobblehead"
+    ]
+  },
+  {
+    "id": "7eb880ef-ba52-4feb-9937-a6c7729a6c62",
+    "name": "Adrian Lazar",
+    "salary": 4400,
+    "yearsOfExperience": 4,
+    "decorations": [
+      "Small cactus"
+    ]
+  },
+  {
+    "id": "ffad8ce4-b338-4708-a769-81c3b708f535",
+    "name": "Daniel Toma",
+    "salary": 5400,
+    "yearsOfExperience": 16,
+    "decorations": [
+      "Family photo",
+      "Hula dancer"
+    ]
+  }
+]

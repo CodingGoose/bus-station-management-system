@@ -1,0 +1,52 @@
+[
+  {
+    "id": "75ab1d8f-ef23-4028-a134-e51d359bc0e8",
+    "name": "Cluj Central",
+    "city": "Cluj-Napoca"
+  },
+  {
+    "id": "84b9dcf9-8c51-4d1d-9e20-12642a3ea817",
+    "name": "Bucuresti Nord",
+    "city": "Bucuresti"
+  },
+  {
+    "id": "a8d3ab6e-6723-4496-823e-675cfad7d9bf",
+    "name": "Brasov Autogara 1",
+    "city": "Brasov"
+  },
+  {
+    "id": "77a21870-a1a8-4f0b-ad41-db136c7dd342",
+    "name": "Sibiu Autogara",
+    "city": "Sibiu"
+  },
+  {
+    "id": "ac887604-01bf-4e5d-acfd-a86933014322",
+    "name": "Timisoara Nord",
+    "city": "Timisoara"
+  },
+  {
+    "id": "5cf31284-2257-4b27-b78e-17f401a667e4",
+    "name": "Iasi Autogara",
+    "city": "Iasi"
+  },
+  {
+    "id": "1fa04b53-40d9-4870-96ee-01748fe1638a",
+    "name": "Oradea Autogara",
+    "city": "Oradea"
+  },
+  {
+    "id": "57de0a3d-a66c-4fa2-a850-22b13eece190",
+    "name": "Constanta Sud",
+    "city": "Constanta"
+  },
+  {
+    "id": "0d533ba4-f719-46e1-b5af-89032745b4af",
+    "name": "Targu Mures Autogara",
+    "city": "Targu Mures"
+  },
+  {
+    "id": "00d55bc1-cb06-4b22-8476-baebba7e4ef9",
+    "name": "Alba Iulia Autogara",
+    "city": "Alba Iulia"
+  }
+]

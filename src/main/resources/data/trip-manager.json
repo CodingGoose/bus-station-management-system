@@ -1,0 +1,62 @@
+[
+  {
+    "id": "fe224be1-3785-4fc2-829b-c9ff988c99f5",
+    "name": "Maria Ionescu",
+    "salary": 6200,
+    "employeeCode": "TM-001"
+  },
+  {
+    "id": "7a9877d6-a956-4d76-953e-f0f20df6e7aa",
+    "name": "Elena Pop",
+    "salary": 5800,
+    "employeeCode": "TM-002"
+  },
+  {
+    "id": "46a6f046-b4f6-42b3-a180-f52dadb4b43a",
+    "name": "Alexandra Vasilescu",
+    "salary": 7100,
+    "employeeCode": "TM-003"
+  },
+  {
+    "id": "48c84360-7ae2-4108-bc57-feb00336276b",
+    "name": "Ioana Georgescu",
+    "salary": 5500,
+    "employeeCode": "TM-004"
+  },
+  {
+    "id": "18cf0a34-dab1-4863-a19b-95ec40009f92",
+    "name": "Bogdan Marinescu",
+    "salary": 6600,
+    "employeeCode": "TM-005"
+  },
+  {
+    "id": "3f0f8bc7-c889-41e0-a998-9f6e0242e10a",
+    "name": "Laura Stoica",
+    "salary": 5900,
+    "employeeCode": "TM-006"
+  },
+  {
+    "id": "63a8601b-e820-4e29-a48a-6a5aef0c259d",
+    "name": "Paul Dobre",
+    "salary": 7400,
+    "employeeCode": "TM-007"
+  },
+  {
+    "id": "2aad087d-fc7c-4dcc-b9dc-582f5682fe69",
+    "name": "Simona Barbu",
+    "salary": 6000,
+    "employeeCode": "TM-008"
+  },
+  {
+    "id": "adf9ada7-cdf8-4d27-8123-0c7f27982407",
+    "name": "Catalin Nistor",
+    "salary": 5300,
+    "employeeCode": "TM-009"
+  },
+  {
+    "id": "bbeb758e-9b3a-46c0-bc31-2590ed40a4ec",
+    "name": "Roxana Tudor",
+    "salary": 6800,
+    "employeeCode": "TM-010"
+  }
+]

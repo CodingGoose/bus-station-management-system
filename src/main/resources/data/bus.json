@@ -1,0 +1,82 @@
+[
+  {
+    "id": "228d5586-97b8-4385-a108-cb6d2dbd98a0",
+    "registrationNumber": "CJ-10-BSM",
+    "capacity": 50,
+    "status": "Active",
+    "hasAC": true,
+    "fuelType": "Diesel"
+  },
+  {
+    "id": "42eac64b-f357-424f-a737-58da6b284315",
+    "registrationNumber": "CJ-22-TRV",
+    "capacity": 45,
+    "status": "Active",
+    "hasAC": true,
+    "fuelType": "Diesel"
+  },
+  {
+    "id": "2f149026-f317-4221-8130-dde6aad5c5c4",
+    "registrationNumber": "B-101-EXP",
+    "capacity": 55,
+    "status": "Active",
+    "hasAC": true,
+    "fuelType": "Hybrid"
+  },
+  {
+    "id": "1a7de802-cf66-4d7b-a604-b13488d3bc11",
+    "registrationNumber": "BV-07-CAR",
+    "capacity": 35,
+    "status": "Active",
+    "hasAC": false,
+    "fuelType": "Diesel"
+  },
+  {
+    "id": "43939f5f-8cb1-4979-8f42-cd004f656b21",
+    "registrationNumber": "SB-12-LIN",
+    "capacity": 30,
+    "status": "Active",
+    "hasAC": true,
+    "fuelType": "Electric"
+  },
+  {
+    "id": "a75ff8e9-8828-45ad-9324-7a1ee8a0a735",
+    "registrationNumber": "TM-33-VST",
+    "capacity": 50,
+    "status": "Active",
+    "hasAC": true,
+    "fuelType": "Diesel"
+  },
+  {
+    "id": "a0b919cb-ef8f-4568-9d5b-d2cc89691e21",
+    "registrationNumber": "IS-44-MOL",
+    "capacity": 40,
+    "status": "Active",
+    "hasAC": false,
+    "fuelType": "Gasoline"
+  },
+  {
+    "id": "b3466a82-0df0-4663-a7d2-364fc0d14ee4",
+    "registrationNumber": "CT-55-MAR",
+    "capacity": 60,
+    "status": "Active",
+    "hasAC": true,
+    "fuelType": "Hybrid"
+  },
+  {
+    "id": "e89aad4c-c517-4bcf-a0dd-038bb3c2dd98",
+    "registrationNumber": "MS-08-ARD",
+    "capacity": 25,
+    "status": "Active",
+    "hasAC": true,
+    "fuelType": "Electric"
+  },
+  {
+    "id": "6731c081-a317-424f-b4b2-26fdb1783149",
+    "registrationNumber": "AB-19-OLD",
+    "capacity": 40,
+    "status": "Down",
+    "hasAC": false,
+    "fuelType": "Diesel"
+  }
+]

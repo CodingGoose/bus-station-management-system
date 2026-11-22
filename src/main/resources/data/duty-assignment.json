@@ -1,0 +1,86 @@
+[
+  {
+    "id": "128496c4-c22b-4f06-804e-07a0c4b3382b",
+    "tripId": "3f233464-434d-4a57-a329-5cd773446b6b",
+    "staffId": "066adab3-4fdc-470f-a0c7-9173251f2045",
+    "role": "PrimaryDriver"
+  },
+  {
+    "id": "fcba85b6-a79f-49e9-95fb-08371f795ff5",
+    "tripId": "82bc3a3e-14a2-4ef5-bf03-3725ad822fee",
+    "staffId": "d9284191-0377-4fba-a74d-535ab3d9dfc0",
+    "role": "PrimaryDriver"
+  },
+  {
+    "id": "8bc09946-82d5-4f49-b2c9-e315ef754227",
+    "tripId": "316896db-acfb-4209-a760-3c2dc4d5df3a",
+    "staffId": "1ce43171-6e73-4701-97cb-4f02336530ae",
+    "role": "PrimaryDriver"
+  },
+  {
+    "id": "1243ee57-15c0-4983-b101-da70d9888699",
+    "tripId": "8f8e8bae-2918-435e-b907-ab81cf07258b",
+    "staffId": "713d8c0b-4903-42e9-b26b-a076e13df964",
+    "role": "PrimaryDriver"
+  },
+  {
+    "id": "7746cac6-4e4d-45d7-88a9-d92986f6bf45",
+    "tripId": "de57fb35-6954-4940-9da1-cf67391bfc77",
+    "staffId": "c14fa2c2-4370-4995-86ff-56f4887e7934",
+    "role": "PrimaryDriver"
+  },
+  {
+    "id": "7c9db05e-b086-47f0-89bb-506fe8e5c813",
+    "tripId": "a26f256e-ff09-4c69-a333-e09fa5779392",
+    "staffId": "b2a68897-3c61-4032-b739-c58dac648fc1",
+    "role": "PrimaryDriver"
+  },
+  {
+    "id": "6e67b39b-dad6-43fc-9f80-2b5f155b1d0c",
+    "tripId": "e44bc767-3a83-4476-8f45-db99f13aba7f",
+    "staffId": "15869ba8-b239-4771-a1c1-ddf533adc413",
+    "role": "PrimaryDriver"
+  },
+  {
+    "id": "a2f4bc41-7454-4780-bda5-5fe7a0e7d020",
+    "tripId": "19798749-abc8-4431-97a2-cfa97111b5eb",
+    "staffId": "80a3ad04-4734-4c64-8172-916226be674d",
+    "role": "PrimaryDriver"
+  },
+  {
+    "id": "79beb019-f45a-4341-a6d3-824a7e45fb1e",
+    "tripId": "9a01e559-f1ab-4067-a7a1-8ad9c42d9827",
+    "staffId": "7eb880ef-ba52-4feb-9937-a6c7729a6c62",
+    "role": "PrimaryDriver"
+  },
+  {
+    "id": "c95bc071-fbda-45e5-8dce-5e03db93da75",
+    "tripId": "e6ed21d5-bbd6-4311-b244-b04edf2ea277",
+    "staffId": "ffad8ce4-b338-4708-a769-81c3b708f535",
+    "role": "PrimaryDriver"
+  },
+  {
+    "id": "e59e391d-502f-482e-9565-80f681f9f4f1",
+    "tripId": "3f233464-434d-4a57-a329-5cd773446b6b",
+    "staffId": "c14fa2c2-4370-4995-86ff-56f4887e7934",
+    "role": "ReserveDriver"
+  },
+  {
+    "id": "a13aab1e-a362-48ee-93be-2114a4d7e883",
+    "tripId": "19798749-abc8-4431-97a2-cfa97111b5eb",
+    "staffId": "d9284191-0377-4fba-a74d-535ab3d9dfc0",
+    "role": "ReserveDriver"
+  },
+  {
+    "id": "1aa73d2d-a814-411b-87c5-00fa33d2dfbe",
+    "tripId": "9a01e559-f1ab-4067-a7a1-8ad9c42d9827",
+    "staffId": "1ce43171-6e73-4701-97cb-4f02336530ae",
+    "role": "ReserveDriver"
+  },
+  {
+    "id": "0a227cca-4194-4f98-a5cc-fc23165daeb1",
+    "tripId": "a26f256e-ff09-4c69-a333-e09fa5779392",
+    "staffId": "15869ba8-b239-4771-a1c1-ddf533adc413",
+    "role": "ReserveDriver"
+  }
+]

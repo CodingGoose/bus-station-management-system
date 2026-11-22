@@ -1,0 +1,52 @@
+[
+  {
+    "id": "3d6b3be2-4e16-4b43-a5b9-db169317ff47",
+    "name": "Ana Pop",
+    "currency": "RON"
+  },
+  {
+    "id": "8edf7c9c-e19d-4e68-b553-177420ef30e8",
+    "name": "Mihaela Rad",
+    "currency": "RON"
+  },
+  {
+    "id": "8c04ca24-c6ca-4c7a-9bee-dc3dc5cdbdda",
+    "name": "Stefan Oprea",
+    "currency": "RON"
+  },
+  {
+    "id": "aec633e1-428a-4258-85ea-10ded93b28cc",
+    "name": "Diana Moldovan",
+    "currency": "RON"
+  },
+  {
+    "id": "7a894149-f816-4208-b37c-039d94fa7776",
+    "name": "Lukas Schmidt",
+    "currency": "EUR"
+  },
+  {
+    "id": "158ba6ba-30d9-4351-b505-3a75c277b280",
+    "name": "Teodora Ilie",
+    "currency": "RON"
+  },
+  {
+    "id": "c941adb3-785c-4fe7-9284-6b65aa9d75b7",
+    "name": "Victor Neagu",
+    "currency": "RON"
+  },
+  {
+    "id": "c2e7f03d-c3ee-4b1e-ab59-a130dfd1057d",
+    "name": "Sophie Martin",
+    "currency": "EUR"
+  },
+  {
+    "id": "5d971190-2502-4031-a9e1-fbc2cd438ac8",
+    "name": "Iulia Sandu",
+    "currency": "RON"
+  },
+  {
+    "id": "c4a65953-b181-4d8f-80c6-80a41dda5222",
+    "name": "Razvan Constantin",
+    "currency": "RON"
+  }
+]
