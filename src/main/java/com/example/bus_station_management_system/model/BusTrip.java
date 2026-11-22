@@ -1,5 +1,6 @@
 package com.example.bus_station_management_system.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
@@ -19,7 +20,9 @@ public class BusTrip implements Identifiable {
     private String busId;
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime startTime;
+    @JsonIgnore
     private List<String> tickets = new ArrayList<>();
+    @JsonIgnore
     private List<String> assignments = new ArrayList<>();
     private TripStatus status;
 

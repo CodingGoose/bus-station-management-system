@@ -1,23 +1,24 @@
 package com.example.bus_station_management_system.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class TripManager extends Staff {
     private String employeeCode;
-    private List<DutyAssignment> assignments;
+    @JsonIgnore
+    private List<DutyAssignment> assignments = new ArrayList<>();
 
     public TripManager(){}
     public TripManager(String id, String name, String employeeCode) {
         super(id, name);
         this.employeeCode = employeeCode;
-        this.assignments = new ArrayList<>();
     }
 
     public TripManager(String id, String name, int salary, String employeeCode) {
         super(id, name, salary);
         this.employeeCode = employeeCode;
-        this.assignments = new ArrayList<>();
     }
 
     public String getEmployeeCode() { return employeeCode; }

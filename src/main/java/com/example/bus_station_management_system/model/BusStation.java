@@ -1,5 +1,7 @@
 package com.example.bus_station_management_system.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +9,7 @@ public class BusStation implements Identifiable {
     private String id;
     private String name;
     private String city;
+    @JsonIgnore
     private List<String> trips = new ArrayList<>();
 
     public BusStation() {}

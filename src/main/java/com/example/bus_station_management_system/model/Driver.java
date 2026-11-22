@@ -1,26 +1,25 @@
 package com.example.bus_station_management_system.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Driver extends Staff {
     private int yearsOfExperience;
-    private List<DutyAssignment> assignments;
-    private List<String> decorations;
+    @JsonIgnore
+    private List<DutyAssignment> assignments = new ArrayList<>();
+    private List<String> decorations = new ArrayList<>();
 
     public Driver(){}
     public Driver(String id, String name, int yearsOfExperience) {
         super(id, name);
         this.yearsOfExperience = yearsOfExperience;
-        this.assignments = new ArrayList<>();
-        this.decorations = new ArrayList<>();
     }
 
     public Driver(String id, String name, int salary, int yearsOfExperience) {
         super(id, name, salary);
         this.yearsOfExperience = yearsOfExperience;
-        this.assignments = new ArrayList<>();
-        this.decorations = new ArrayList<>();
     }
 
 
