@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/layout :: header('Duty Assignment Details')}">
+    <title>Duty Assignment Details</title>
+</head>
+
+<body>
+
+<h1>Duty Assignment Details</h1>
+<div th:replace="~{fragments/layout :: details-bar('/duty-assignment', ${dutyAssignment.id})}"></div>
+<!--/*@thymesVar id="dutyAssignment" type="com.example.bus_station_management_system.model.DutyAssignment"*/-->
+<table>
+    <tr>
+        <th>Trip</th>
+        <td th:text="${tripLabels.getOrDefault(dutyAssignment.tripId, '-')}"></td>
+    </tr>
+    <tr>
+        <th>Staff</th>
+        <td th:text="${staffLabels.getOrDefault(dutyAssignment.staffId, '-')}"></td>
+    </tr>
+    <tr>
+        <th>Role</th>
+        <td th:text="${dutyAssignment.role}"></td>
+    </tr>
+</table>
+</body>
+</html>

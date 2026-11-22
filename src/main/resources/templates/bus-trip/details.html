@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/layout :: header('Bus Trip Details')}">
+    <title>Bus Trip Details</title>
+</head>
+
+<body>
+
+<h1>Bus Trip Details</h1>
+<div th:replace="~{fragments/layout :: details-bar('/bus-trip', ${busTrip.id})}"></div>
+<!--/*@thymesVar id="busTrip" type="com.example.bus_station_management_system.model.BusTrip"*/-->
+<table>
+    <tr>
+        <th>Route</th>
+        <td th:text="${routeLabels.getOrDefault(busTrip.routeId, '-')}"></td>
+    </tr>
+    <tr>
+        <th>Bus</th>
+        <td th:text="${busLabels.getOrDefault(busTrip.busId, '-')}"></td>
+    </tr>
+    <tr>
+        <th>Start time</th>
+        <td th:text="${#temporals.format(busTrip.startTime, 'dd.MM.yyyy HH:mm')}"></td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td th:text="${busTrip.status}"></td>
+    </tr>
+</table>
+</body>
+</html>

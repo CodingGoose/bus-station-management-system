@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/layout :: header('Bus Details')}">
+    <title>Bus Details</title>
+</head>
+
+<body>
+
+<h1>Bus Details</h1>
+<div th:replace="~{fragments/layout :: details-bar('/bus', ${bus.id})}"></div>
+<!--/*@thymesVar id="bus" type="com.example.bus_station_management_system.model.Bus"*/-->
+<table>
+    <tr>
+        <th>Registration number</th>
+        <td th:text="${bus.registrationNumber}"></td>
+    </tr>
+    <tr>
+        <th>Capacity</th>
+        <td th:text="${bus.capacity}"></td>
+    </tr>
+    <tr>
+        <th>Status</th>
+        <td th:text="${bus.status}"></td>
+    </tr>
+    <tr>
+        <th>Air conditioning</th>
+        <td th:text="${bus.hasAC ? 'Yes' : 'No'}"></td>
+    </tr>
+    <tr>
+        <th>Fuel type</th>
+        <td th:text="${bus.fuelType}"></td>
+    </tr>
+</table>
+</body>
+</html>

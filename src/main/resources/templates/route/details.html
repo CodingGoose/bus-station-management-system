@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/layout :: header('Route Details')}">
+    <title>Route Details</title>
+</head>
+
+<body>
+
+<h1>Route Details</h1>
+<div th:replace="~{fragments/layout :: details-bar('/route', ${route.id})}"></div>
+<!--/*@thymesVar id="route" type="com.example.bus_station_management_system.model.Route"*/-->
+<table>
+    <tr>
+        <th>Origin</th>
+        <td th:text="${stationLabels.getOrDefault(route.origin?.id, '-')}"></td>
+    </tr>
+    <tr>
+        <th>Destination</th>
+        <td th:text="${stationLabels.getOrDefault(route.destination?.id, '-')}"></td>
+    </tr>
+    <tr>
+        <th>Distance</th>
+        <td th:text="${route.distance + ' km'}"></td>
+    </tr>
+</table>
+</body>
+</html>

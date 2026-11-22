@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/layout :: header('Driver Details')}">
+    <title>Driver Details</title>
+</head>
+
+<body>
+
+<h1>Driver Details</h1>
+<div th:replace="~{fragments/layout :: details-bar('/driver', ${driver.id})}"></div>
+<!--/*@thymesVar id="driver" type="com.example.bus_station_management_system.model.Driver"*/-->
+<table>
+    <tr>
+        <th>Name</th>
+        <td th:text="${driver.name}"></td>
+    </tr>
+    <tr>
+        <th>Salary</th>
+        <td th:text="${driver.salary}"></td>
+    </tr>
+    <tr>
+        <th>Years of experience</th>
+        <td th:text="${driver.yearsOfExperience}"></td>
+    </tr>
+    <tr>
+        <th>Decorations</th>
+        <td th:text="${driver.decorations == null or driver.decorations.isEmpty() ? '-' : #strings.listJoin(driver.decorations, ', ')}"></td>
+    </tr>
+</table>
+</body>
+</html>

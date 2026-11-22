@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{fragments/layout :: header('Trip Manager Details')}">
+    <title>Trip Manager Details</title>
+</head>
+
+<body>
+
+<h1>Trip Manager Details</h1>
+<div th:replace="~{fragments/layout :: details-bar('/trip-manager', ${tripManager.id})}"></div>
+<!--/*@thymesVar id="tripManager" type="com.example.bus_station_management_system.model.TripManager"*/-->
+<table>
+    <tr>
+        <th>Name</th>
+        <td th:text="${tripManager.name}"></td>
+    </tr>
+    <tr>
+        <th>Salary</th>
+        <td th:text="${tripManager.salary}"></td>
+    </tr>
+    <tr>
+        <th>Employee code</th>
+        <td th:text="${tripManager.employeeCode}"></td>
+    </tr>
+</table>
+</body>
+</html>
