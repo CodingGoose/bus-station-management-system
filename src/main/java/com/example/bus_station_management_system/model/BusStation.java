@@ -10,7 +10,7 @@ public class BusStation implements Identifiable {
     private String name;
     private String city;
     @JsonIgnore
-    private List<String> trips = new ArrayList<>();
+    private List<BusTrip> trips = new ArrayList<>();
 
     public BusStation() {}
 
@@ -30,6 +30,6 @@ public class BusStation implements Identifiable {
     public String getCity() { return city; }
     public void setCity(String city) { this.city = city; }
 
-    public List<String> getTrips() { return trips; }
-    public void setTrips(List<String> trips) { this.trips = trips; }
+    public List<BusTrip> getTrips() { return trips; }
+    public void setTrips(List<BusTrip> trips) { this.trips = trips; }
 }

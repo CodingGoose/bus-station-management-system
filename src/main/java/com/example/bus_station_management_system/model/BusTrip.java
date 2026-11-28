@@ -21,9 +21,9 @@ public class BusTrip implements Identifiable {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime startTime;
     @JsonIgnore
-    private List<String> tickets = new ArrayList<>();
+    private List<Ticket> tickets = new ArrayList<>();
     @JsonIgnore
-    private List<String> assignments = new ArrayList<>();
+    private List<DutyAssignment> assignments = new ArrayList<>();
     private TripStatus status;
 
     public BusTrip() {}
@@ -49,11 +49,11 @@ public class BusTrip implements Identifiable {
     public LocalDateTime getStartTime() { return startTime; }
     public void setStartTime(LocalDateTime startTime) { this.startTime = startTime; }
 
-    public List<String> getTickets() { return tickets; }
-    public void setTickets(List<String> tickets) { this.tickets = tickets; }
+    public List<Ticket> getTickets() { return tickets; }
+    public void setTickets(List<Ticket> tickets) { this.tickets = tickets; }
 
-    public List<String> getAssignments() { return assignments; }
-    public void setAssignments(List<String> assignments) { this.assignments = assignments; }
+    public List<DutyAssignment> getAssignments() { return assignments; }
+    public void setAssignments(List<DutyAssignment> assignments) { this.assignments = assignments; }
 
     public TripStatus getStatus() { return status; }
     public void setStatus(TripStatus status) { this.status = status; }

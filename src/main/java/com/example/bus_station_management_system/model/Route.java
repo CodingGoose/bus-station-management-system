@@ -10,7 +10,7 @@ public class Route implements Identifiable {
     private BusStation destination;
     private double distance;
     @JsonIgnore
-    private List<String> trips = new ArrayList<>();
+    private List<BusTrip> trips = new ArrayList<>();
 
     public Route() {}
 
@@ -34,6 +34,6 @@ public class Route implements Identifiable {
     public double getDistance() { return distance; }
     public void setDistance(double distance) { this.distance = distance; }
 
-    public List<String> getTrips() { return trips; }
-    public void setTrips(List<String> trips) { this.trips = trips; }
+    public List<BusTrip> getTrips() { return trips; }
+    public void setTrips(List<BusTrip> trips) { this.trips = trips; }
 }

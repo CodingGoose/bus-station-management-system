@@ -7,6 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.UUID;
 
 public abstract class BaseService<T extends Identifiable> {
 
@@ -16,11 +17,19 @@ public abstract class BaseService<T extends Identifiable> {
         this.repository = repository;
     }
 
-    public T create(T entity){
+    public T create(T entity) {
+        if (entity.getId() == null || entity.getId().isBlank()) {
+            entity.setId(UUID.randomUUID().toString());
+        } else if (repository.existsById(entity.getId())) {
+            throw new IllegalArgumentException("An entity with ID " + entity.getId() + " already exists.");
+        }
         return repository.create(entity);
     }
 
-    public T update(T entity){
+    public T update(T entity) {
+        if (entity.getId() == null || entity.getId().isBlank() || !repository.existsById(entity.getId())) {
+            throw new NoSuchElementException("An entity with ID " + entity.getId() + " doesn't exist.");
+        }
         return repository.update(entity);
     }
 

@@ -13,20 +13,12 @@ public abstract class InMemoryRepository<T extends Identifiable> implements IRep
 
     @Override
     public synchronized T create(T entity) {
-        if (entity.getId() == null || entity.getId().isBlank()) {
-            entity.setId(UUID.randomUUID().toString());
-        } else if (storage.containsKey(entity.getId())) {
-            throw new IllegalArgumentException("An entity with ID " + entity.getId() + " already exists.");
-        }
         storage.put(entity.getId(), entity);
         return entity;
     }
 
     @Override
     public synchronized T update(T entity) {
-        if (!storage.containsKey(entity.getId())) {
-            throw new NoSuchElementException("An entity with ID " + entity.getId() + " doesn't exist.");
-        }
         storage.put(entity.getId(), entity);
         return entity;
     }
