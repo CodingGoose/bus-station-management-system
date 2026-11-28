@@ -1,9 +1,14 @@
 package com.example.bus_station_management_system.controller;
 
+import com.example.bus_station_management_system.exception.ValidationException;
 import com.example.bus_station_management_system.model.Identifiable;
 import com.example.bus_station_management_system.service.BaseService;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.NoSuchElementException;
 
 public abstract class BaseController<T extends Identifiable> {
 
@@ -39,14 +44,26 @@ public abstract class BaseController<T extends Identifiable> {
     }
 
     @PostMapping
-    public String create(@ModelAttribute T entity) {
-        service.create(entity);
-        return "redirect:/" + folderName;
+    public String create(@ModelAttribute T entity, BindingResult bindingResult, Model model) {
+        if (bindingResult.hasErrors()) {
+            return renderFormWithErrors(entity, bindingResult, model, false);
+        }
+        try {
+            service.create(entity);
+            return "redirect:/" + folderName;
+        } catch (ValidationException | NoSuchElementException e) {
+            addExceptionError(bindingResult, e);
+            return renderFormWithErrors(entity, bindingResult, model, false);
+        }
     }
 
     @PostMapping("/{id}/delete")
-    public String delete(@PathVariable String id) {
-        service.delete(id);
+    public String delete(@PathVariable String id, RedirectAttributes redirectAttributes) {
+        try {
+            service.delete(id);
+        } catch (ValidationException | NoSuchElementException e) {
+            redirectAttributes.addFlashAttribute("errorMessage", e.getMessage());
+        }
         return "redirect:/" + folderName;
     }
 
@@ -66,9 +83,41 @@ public abstract class BaseController<T extends Identifiable> {
     }
 
     @PostMapping("/{id}")
-    public String update(@PathVariable String id, @ModelAttribute T entity) {
+    public String update(@PathVariable String id, @ModelAttribute T entity, BindingResult bindingResult, Model model) {
         entity.setId(id);
-        service.update(entity);
+        if (bindingResult.hasErrors()) {
+            return renderFormWithErrors(entity, bindingResult, model, true);
+        }
+        try {
+            service.update(entity);
+            return "redirect:/" + folderName;
+        } catch (ValidationException | NoSuchElementException e) {
+            addExceptionError(bindingResult, e);
+            return renderFormWithErrors(entity, bindingResult, model, true);
+        }
+    }
+
+    @ExceptionHandler(NoSuchElementException.class)
+    public String handleNotFound(NoSuchElementException e, RedirectAttributes redirectAttributes) {
+        redirectAttributes.addFlashAttribute("errorMessage", e.getMessage());
         return "redirect:/" + folderName;
+    }
+
+    private void addExceptionError(BindingResult bindingResult, RuntimeException e) {
+        if (e instanceof ValidationException ve && ve.getField() != null && !ve.getField().isBlank()) {
+            bindingResult.rejectValue(ve.getField(), "validation.error", ve.getMessage());
+        } else {
+            bindingResult.reject("validation.error", e.getMessage());
+        }
+    }
+
+    private String renderFormWithErrors(T entity, BindingResult bindingResult, Model model, boolean isEdit) {
+        model.addAttribute(modelName, entity);
+        model.addAttribute(BindingResult.MODEL_KEY_PREFIX + modelName, bindingResult);
+        if (isEdit) {
+            model.addAttribute("isEdit", true);
+        }
+        addReferenceData(model);
+        return folderName + "/form";
     }
 }
