@@ -3,6 +3,7 @@ package com.example.bus_station_management_system.controller;
 import com.example.bus_station_management_system.exception.ValidationException;
 import com.example.bus_station_management_system.model.Identifiable;
 import com.example.bus_station_management_system.service.BaseService;
+import jakarta.validation.Valid;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -47,7 +48,7 @@ public abstract class BaseController<T extends Identifiable> {
     }
 
     @PostMapping
-    public String create(@ModelAttribute T entity, BindingResult bindingResult, Model model) {
+    public String create(@Valid @ModelAttribute T entity, BindingResult bindingResult, Model model) {
         if (bindingResult.hasErrors()) {
             return renderFormWithErrors(entity, bindingResult, model, false);
         }
@@ -87,7 +88,7 @@ public abstract class BaseController<T extends Identifiable> {
     }
 
     @PostMapping("/{id}")
-    public String update(@PathVariable String id, @ModelAttribute T entity, BindingResult bindingResult, Model model) {
+    public String update(@PathVariable String id, @Valid @ModelAttribute T entity, BindingResult bindingResult, Model model) {
         entity.setId(id);
         if (bindingResult.hasErrors()) {
             return renderFormWithErrors(entity, bindingResult, model, true);

@@ -7,8 +7,10 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,15 +21,18 @@ public class Route implements Identifiable {
     @Id
     @Column(length = 36)
     private String id;
+    @NotNull(message = "Selected origin station does not exist.")
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "origin_id", nullable = false)
     private BusStation origin;
+    @NotNull(message = "Selected destination station does not exist.")
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "destination_id", nullable = false)
     private BusStation destination;
+    @Positive(message = "Distance must be greater than 0.")
     @Column(nullable = false)
     private double distance;
-    @Transient
+    @OneToMany(mappedBy = "route")
     @JsonIgnore
     private List<BusTrip> trips = new ArrayList<>();
 

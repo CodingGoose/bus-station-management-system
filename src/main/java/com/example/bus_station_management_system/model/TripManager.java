@@ -1,22 +1,16 @@
 package com.example.bus_station_management_system.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
-
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "trip_manager")
 public class TripManager extends Staff {
+    @NotBlank(message = "Employee code must not be blank.")
     @Column(name = "employee_code", nullable = false)
     private String employeeCode;
-    @Transient
-    @JsonIgnore
-    private List<DutyAssignment> assignments = new ArrayList<>();
 
     public TripManager(){}
     public TripManager(String id, String name, String employeeCode) {
@@ -31,8 +25,5 @@ public class TripManager extends Staff {
 
     public String getEmployeeCode() { return employeeCode; }
     public void setEmployeeCode(String employeeCode) { this.employeeCode = employeeCode; }
-
-    public List<DutyAssignment> getAssignments() { return assignments; }
-    public void setAssignments(List<DutyAssignment> assignments) { this.assignments = assignments; }
 
 }

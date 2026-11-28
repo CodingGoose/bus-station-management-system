@@ -8,6 +8,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
 @Table(name = "ticket")
@@ -15,20 +17,24 @@ public class Ticket implements Identifiable {
     @Id
     @Column(length = 36)
     private String id;
+    @NotBlank(message = "Selected trip does not exist.")
     @Column(name = "trip_id", length = 36, nullable = false)
     private String tripId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "trip_id", insertable = false, updatable = false)
     @JsonIgnore
     private BusTrip trip;
+    @NotBlank(message = "Selected passenger does not exist.")
     @Column(name = "passenger_id", length = 36, nullable = false)
     private String passengerId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "passenger_id", insertable = false, updatable = false)
     @JsonIgnore
     private Passenger passenger;
+    @NotBlank(message = "Seat number must not be blank.")
     @Column(name = "seat_number", nullable = false)
     private String seatNumber;
+    @PositiveOrZero(message = "Price must be 0 or greater.")
     @Column(nullable = false)
     private double price;
 

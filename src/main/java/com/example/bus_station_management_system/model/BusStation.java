@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +17,10 @@ public class BusStation implements Identifiable {
     @Id
     @Column(length = 36)
     private String id;
+    @NotBlank(message = "Station name must not be blank.")
     @Column(nullable = false)
     private String name;
+    @NotBlank(message = "City must not be blank.")
     @Column(nullable = false)
     private String city;
     @Transient

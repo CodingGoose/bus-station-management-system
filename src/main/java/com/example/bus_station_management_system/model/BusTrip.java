@@ -9,8 +9,10 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
@@ -30,27 +32,31 @@ public class BusTrip implements Identifiable {
     @Id
     @Column(length = 36)
     private String id;
+    @NotBlank(message = "Selected route does not exist.")
     @Column(name = "route_id", length = 36, nullable = false)
     private String routeId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "route_id", insertable = false, updatable = false)
     @JsonIgnore
     private Route route;
+    @NotBlank(message = "Selected bus does not exist.")
     @Column(name = "bus_id", length = 36, nullable = false)
     private String busId;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bus_id", insertable = false, updatable = false)
     @JsonIgnore
     private Bus bus;
+    @NotNull(message = "Start time must not be empty.")
     @Column(name = "start_time", nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime startTime;
-    @Transient
+    @OneToMany(mappedBy = "trip")
     @JsonIgnore
     private List<Ticket> tickets = new ArrayList<>();
-    @Transient
+    @OneToMany(mappedBy = "trip")
     @JsonIgnore
     private List<DutyAssignment> assignments = new ArrayList<>();
+    @NotNull(message = "Trip status must be selected.")
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TripStatus status;

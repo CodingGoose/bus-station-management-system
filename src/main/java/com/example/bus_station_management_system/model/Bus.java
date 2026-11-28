@@ -6,6 +6,9 @@ import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 @Table(name = "bus")
@@ -26,15 +29,19 @@ public class Bus implements Identifiable {
     @Id
     @Column(length = 36)
     private String id;
+    @NotBlank(message = "Registration number must not be blank.")
     @Column(name = "registration_number", nullable = false)
     private String registrationNumber;
+    @Positive(message = "Capacity must be greater than 0.")
     @Column(nullable = false)
     private int capacity;
+    @NotNull(message = "Status must be selected.")
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private BusStatus status;
     @Column(name = "has_ac", nullable = false)
     private boolean hasAC;
+    @NotNull(message = "Fuel type must be selected.")
     @Enumerated(EnumType.STRING)
     @Column(name = "fuel_type", nullable = false)
     private FuelType fuelType;
