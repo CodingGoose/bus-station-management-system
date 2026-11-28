@@ -57,4 +57,23 @@ public class DutyAssignmentService extends BaseService<DutyAssignment> {
             }
         }
     }
+
+    public java.util.List<DutyAssignment> findByTripId(String tripId) {
+        return findAll().stream()
+                .filter(assignment -> tripId.equals(assignment.getTripId()))
+                .toList();
+    }
+
+    public java.util.List<DutyAssignment> findByStaffId(String staffId) {
+        return findAll().stream()
+                .filter(assignment -> staffId.equals(assignment.getStaffId()))
+                .toList();
+    }
+
+    public java.util.Map<String, String> staffLabels() {
+        java.util.Map<String, String> staffLabels = new java.util.LinkedHashMap<>();
+        driverService.labels().forEach((id, name) -> staffLabels.put(id, name + " (Driver)"));
+        tripManagerService.labels().forEach((id, name) -> staffLabels.put(id, name + " (Trip manager)"));
+        return staffLabels;
+    }
 }

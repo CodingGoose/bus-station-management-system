@@ -55,4 +55,12 @@ public class RouteService extends BaseService<Route> {
     private static String idOf(BusStation station) {
         return station == null ? null : station.getId();
     }
+
+    public java.util.Set<String> findIdsByStationId(String stationId) {
+        return findAll().stream()
+                .filter(route -> stationId.equals(idOf(route.getOrigin()))
+                        || stationId.equals(idOf(route.getDestination())))
+                .map(Route::getId)
+                .collect(java.util.stream.Collectors.toSet());
+    }
 }

@@ -90,4 +90,16 @@ public class BusTripService extends BaseService<BusTrip> {
         String start = trip.getStartTime() == null ? "no start time" : trip.getStartTime().format(START_TIME_FORMAT);
         return routeService.labelOf(trip.getRouteId()) + ", " + start;
     }
+
+    public java.util.List<BusTrip> findByRouteId(String routeId) {
+        return findAll().stream()
+                .filter(trip -> routeId.equals(trip.getRouteId()))
+                .toList();
+    }
+
+    public java.util.List<BusTrip> findByRouteIds(java.util.Set<String> routeIds) {
+        return findAll().stream()
+                .filter(trip -> routeIds.contains(trip.getRouteId()))
+                .toList();
+    }
 }

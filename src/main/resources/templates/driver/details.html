@@ -27,5 +27,20 @@
         <td th:text="${driver.decorations == null or driver.decorations.isEmpty() ? '-' : #strings.listJoin(driver.decorations, ', ')}"></td>
     </tr>
 </table>
+
+<h2>Duty Assignments</h2>
+<p th:if="${#lists.isEmpty(assignments)}">No duty assignments found for this driver.</p>
+<table th:unless="${#lists.isEmpty(assignments)}">
+    <tr>
+        <th>Trip</th>
+        <th>Role</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="assignment : ${assignments}">
+        <td th:text="${tripLabels.getOrDefault(assignment.tripId, '-')}"></td>
+        <td th:text="${assignment.role}"></td>
+        <td><a th:href="@{|/duty-assignment/${assignment.id}|}" class="retro-action-btn">Details</a></td>
+    </tr>
+</table>
 </body>
 </html>

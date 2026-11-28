@@ -27,5 +27,37 @@
         <td th:text="${busTrip.status}"></td>
     </tr>
 </table>
+
+<h2>Tickets</h2>
+<p th:if="${#lists.isEmpty(tickets)}">No tickets issued for this trip.</p>
+<table th:unless="${#lists.isEmpty(tickets)}">
+    <tr>
+        <th>Passenger</th>
+        <th>Seat number</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="ticket : ${tickets}">
+        <td th:text="${passengerLabels.getOrDefault(ticket.passengerId, '-')}"></td>
+        <td th:text="${ticket.seatNumber}"></td>
+        <td th:text="${ticket.price}"></td>
+        <td><a th:href="@{|/ticket/${ticket.id}|}" class="retro-action-btn">Details</a></td>
+    </tr>
+</table>
+
+<h2>Duty Assignments</h2>
+<p th:if="${#lists.isEmpty(assignments)}">No staff assigned to this trip.</p>
+<table th:unless="${#lists.isEmpty(assignments)}">
+    <tr>
+        <th>Staff</th>
+        <th>Role</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="assignment : ${assignments}">
+        <td th:text="${staffLabels.getOrDefault(assignment.staffId, '-')}"></td>
+        <td th:text="${assignment.role}"></td>
+        <td><a th:href="@{|/duty-assignment/${assignment.id}|}" class="retro-action-btn">Details</a></td>
+    </tr>
+</table>
 </body>
 </html>

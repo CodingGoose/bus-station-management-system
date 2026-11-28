@@ -19,5 +19,24 @@
         <td th:text="${busStation.city}"></td>
     </tr>
 </table>
+
+<h2>Trips</h2>
+<p th:if="${#lists.isEmpty(trips)}">No trips scheduled through this station.</p>
+<table th:unless="${#lists.isEmpty(trips)}">
+    <tr>
+        <th>Route</th>
+        <th>Bus</th>
+        <th>Start time</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="trip : ${trips}">
+        <td th:text="${routeLabels.getOrDefault(trip.routeId, '-')}"></td>
+        <td th:text="${busLabels.getOrDefault(trip.busId, '-')}"></td>
+        <td th:text="${#temporals.format(trip.startTime, 'dd.MM.yyyy HH:mm')}"></td>
+        <td th:text="${trip.status}"></td>
+        <td><a th:href="@{|/bus-trip/${trip.id}|}" class="retro-action-btn">Details</a></td>
+    </tr>
+</table>
 </body>
 </html>

@@ -72,4 +72,16 @@ public class TicketService extends BaseService<Ticket> {
             throw new ValidationException("tripId", "No seats available: bus capacity (" + bus.getCapacity() + ") has been reached.");
         }
     }
+
+    public java.util.List<Ticket> findByTripId(String tripId) {
+        return findAll().stream()
+                .filter(ticket -> tripId.equals(ticket.getTripId()))
+                .toList();
+    }
+
+    public java.util.List<Ticket> findByPassengerId(String passengerId) {
+        return findAll().stream()
+                .filter(ticket -> passengerId.equals(ticket.getPassengerId()))
+                .toList();
+    }
 }

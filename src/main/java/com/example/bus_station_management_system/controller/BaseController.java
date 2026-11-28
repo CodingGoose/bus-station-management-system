@@ -29,6 +29,9 @@ public abstract class BaseController<T extends Identifiable> {
     protected void addReferenceData(Model model) {
     }
 
+    protected void addDetailsData(String id, Model model) {
+    }
+
     @GetMapping
     public String getAll(Model model) {
         model.addAttribute(listName, service.findAll());
@@ -71,6 +74,7 @@ public abstract class BaseController<T extends Identifiable> {
     public String showDetails(@PathVariable String id, Model model) {
         model.addAttribute(modelName, service.findById(id));
         addReferenceData(model);
+        addDetailsData(id, model);
         return folderName + "/details";
     }
 
