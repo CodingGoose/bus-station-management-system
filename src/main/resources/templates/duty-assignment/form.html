@@ -6,6 +6,7 @@
 <h1 th:text="${isEdit} ? 'Edit Duty Assignment' : 'Add New Duty Assignment'">Add New Duty Assignment</h1>
 <!--/*@thymesVar id="dutyAssignment" type="com.example.bus_station_management_system.model.DutyAssignment"*/-->
 <form th:action="${isEdit} ? @{|/duty-assignment/${dutyAssignment.id}|} : @{/duty-assignment}" th:object="${dutyAssignment}" method="post">
+    <div th:replace="~{fragments/layout :: form-errors}"></div>
 
     <div>
         <label for="tripID">Trip:</label>
@@ -13,6 +14,7 @@
             <option value="">-- Select a trip --</option>
             <option th:each="entry : ${tripLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
         </select>
+        <span class="field-error" th:if="${#fields.hasErrors('tripId')}" th:errors="*{tripId}"></span>
     </div>
 
     <div>
@@ -21,6 +23,7 @@
             <option value="">-- Select a staff member --</option>
             <option th:each="entry : ${staffLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
         </select>
+        <span class="field-error" th:if="${#fields.hasErrors('staffId')}" th:errors="*{staffId}"></span>
     </div>
 
     <div>
@@ -30,6 +33,7 @@
             <option value="PrimaryDriver">Primary Driver</option>
             <option value="ReserveDriver">Reserve Driver</option>
         </select>
+        <span class="field-error" th:if="${#fields.hasErrors('role')}" th:errors="*{role}"></span>
     </div>
 
     <br>

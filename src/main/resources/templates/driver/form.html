@@ -6,20 +6,24 @@
 <h1 th:text="${isEdit} ? 'Edit Driver' : 'Add New Driver'">Add New Driver</h1>
 <!--/*@thymesVar id="driver" type="com.example.bus_station_management_system.model.Driver"*/-->
 <form th:action="${isEdit} ? @{|/driver/${driver.id}|} : @{/driver}" th:object="${driver}" method="post">
+    <div th:replace="~{fragments/layout :: form-errors}"></div>
 
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}" required/>
+        <span class="field-error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
     </div>
 
     <div>
         <label for="salary">Salary:</label>
         <input type="number" id="salary" th:field="*{salary}" required/>
+        <span class="field-error" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></span>
     </div>
 
     <div>
         <label for="yearsOfExperience">Years of experience:</label>
         <input type="number" id="yearsOfExperience" th:field="*{yearsOfExperience}" required/>
+        <span class="field-error" th:if="${#fields.hasErrors('yearsOfExperience')}" th:errors="*{yearsOfExperience}"></span>
     </div>
     <div>
         <label for="decorations">Decorations:</label>

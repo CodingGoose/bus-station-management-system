@@ -13,9 +13,16 @@
     <a href="/" class="back-btn">&larr; BACK TO DASHBOARD</a>
 </div>
 
-<div th:fragment="action-bar(newUrl)" class="action-bar">
-    <a href="/" class="retro-action-btn">&larr; BACK TO DASHBOARD</a>
-    <a th:href="@{__${newUrl}__/new}" class="retro-action-btn add-btn">+ ADD NEW</a>
+<div th:fragment="action-bar(newUrl)">
+    <div class="action-bar">
+        <a href="/" class="retro-action-btn">&larr; BACK TO DASHBOARD</a>
+        <a th:href="@{__${newUrl}__/new}" class="retro-action-btn add-btn">+ ADD NEW</a>
+    </div>
+    <div th:if="${errorMessage}" class="error-banner" th:text="${errorMessage}"></div>
+</div>
+
+<div th:fragment="form-errors" th:if="${#fields.hasGlobalErrors()}" class="error-banner">
+    <div th:each="err : ${#fields.globalErrors()}" th:text="${err}"></div>
 </div>
 
 <!-- Last cell of every list row: Details, Edit and Delete for one entity -->

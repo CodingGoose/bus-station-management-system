@@ -6,15 +6,18 @@
 <h1 th:text="${isEdit} ? 'Edit Passenger' : 'Add New Passenger'">Add New Passenger</h1>
 <!--/*@thymesVar id="passenger" type="com.example.bus_station_management_system.model.Passenger"*/-->
 <form th:action="${isEdit} ? @{|/passenger/${passenger.id}|} : @{/passenger}" th:object="${passenger}" method="post">
+    <div th:replace="~{fragments/layout :: form-errors}"></div>
 
     <div>
         <label for="name">Name:</label>
         <input type="text" id="name" th:field="*{name}" required/>
+        <span class="field-error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
     </div>
 
     <div>
         <label for="currency">Currency:</label>
         <input type="text" id="currency" th:field="*{currency}" required/>
+        <span class="field-error" th:if="${#fields.hasErrors('currency')}" th:errors="*{currency}"></span>
     </div>
 
     <br>

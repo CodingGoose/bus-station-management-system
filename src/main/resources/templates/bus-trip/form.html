@@ -7,12 +7,14 @@
 
 <!--/*@thymesVar id="busTrip" type="com.example.bus_station_management_system.model.BusTrip"*/-->
 <form th:action="${isEdit} ? @{|/bus-trip/${busTrip.id}|} : @{/bus-trip}" th:object="${busTrip}" method="post">
+    <div th:replace="~{fragments/layout :: form-errors}"></div>
     <div>
         <label for="routeId">Route:</label>
         <select id="routeId" th:field="*{routeId}" required>
             <option value="">-- Select a route --</option>
             <option th:each="entry : ${routeLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
         </select>
+        <span class="field-error" th:if="${#fields.hasErrors('routeId')}" th:errors="*{routeId}"></span>
     </div>
     <div>
         <label for="busId">Bus:</label>
@@ -20,10 +22,12 @@
             <option value="">-- Select a bus --</option>
             <option th:each="entry : ${busLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
         </select>
+        <span class="field-error" th:if="${#fields.hasErrors('busId')}" th:errors="*{busId}"></span>
     </div>
     <div>
         <label for="startTime">Start Time:</label>
         <input type="text" id="startTime" th:field="*{startTime}" placeholder="YYYY-MM-DD HH:MM" required/>
+        <span class="field-error" th:if="${#fields.hasErrors('startTime')}" th:errors="*{startTime}"></span>
     </div>
     <div>
         <label for="status">Status:</label>
@@ -32,6 +36,7 @@
             <option value="Active">Active</option>
             <option value="Completed">Completed</option>
         </select>
+        <span class="field-error" th:if="${#fields.hasErrors('status')}" th:errors="*{status}"></span>
     </div>
     <br>
     <button type="submit">Save Bus Trip</button>

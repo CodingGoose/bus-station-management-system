@@ -8,12 +8,14 @@
 
 <!--/*@thymesVar id="route" type="com.example.bus_station_management_system.model.Route"*/-->
 <form th:action="${isEdit} ? @{|/route/${route.id}|} : @{/route}" th:object="${route}" method="post">
+    <div th:replace="~{fragments/layout :: form-errors}"></div>
     <div>
         <label for="originId">Origin Station:</label>
         <select id="originId" th:field="*{origin.id}" required>
             <option value="">-- Select an origin station --</option>
             <option th:each="entry : ${stationLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
         </select>
+        <span class="field-error" th:if="${#fields.hasErrors('origin.id')}" th:errors="*{origin.id}"></span>
     </div>
     <div>
         <label for="destinationId">Destination Station:</label>
@@ -21,10 +23,12 @@
             <option value="">-- Select a destination station --</option>
             <option th:each="entry : ${stationLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
         </select>
+        <span class="field-error" th:if="${#fields.hasErrors('destination.id')}" th:errors="*{destination.id}"></span>
     </div>
     <div>
         <label for="distance">Distance:</label>
         <input type="number" step="0.01" id="distance" th:field="*{distance}" required/>
+        <span class="field-error" th:if="${#fields.hasErrors('distance')}" th:errors="*{distance}"></span>
     </div>
     <br>
     <button type="submit">Save Route</button>

@@ -8,12 +8,14 @@
 
 <!--/*@thymesVar id="ticket" type="com.example.bus_station_management_system.model.Ticket"*/-->
 <form th:action="${isEdit} ? @{|/ticket/${ticket.id}|} : @{/ticket}" th:object="${ticket}" method="post">
+    <div th:replace="~{fragments/layout :: form-errors}"></div>
     <div>
         <label for="tripId">Trip:</label>
         <select id="tripId" th:field="*{tripId}" required>
             <option value="">-- Select a trip --</option>
             <option th:each="entry : ${tripLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
         </select>
+        <span class="field-error" th:if="${#fields.hasErrors('tripId')}" th:errors="*{tripId}"></span>
     </div>
     <div>
         <label for="passengerId">Passenger:</label>
@@ -21,14 +23,17 @@
             <option value="">-- Select a passenger --</option>
             <option th:each="entry : ${passengerLabels}" th:value="${entry.key}" th:text="${entry.value}"></option>
         </select>
+        <span class="field-error" th:if="${#fields.hasErrors('passengerId')}" th:errors="*{passengerId}"></span>
     </div>
     <div>
         <label for="seatNumber">Seat Number:</label>
         <input type="text" id="seatNumber" th:field="*{seatNumber}" required/>
+        <span class="field-error" th:if="${#fields.hasErrors('seatNumber')}" th:errors="*{seatNumber}"></span>
     </div>
     <div>
         <label for="price">Price:</label>
         <input type="number" step="0.01" id="price" th:field="*{price}" required/>
+        <span class="field-error" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></span>
     </div>
     <br>
     <button type="submit">Save Ticket</button>
