@@ -1,12 +1,24 @@
 package com.example.bus_station_management_system.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "bus_trip")
 public class BusTrip implements Identifiable {
 
     public enum TripStatus {
@@ -15,15 +27,32 @@ public class BusTrip implements Identifiable {
         Completed
     }
 
+    @Id
+    @Column(length = 36)
     private String id;
+    @Column(name = "route_id", length = 36, nullable = false)
     private String routeId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "route_id", insertable = false, updatable = false)
+    @JsonIgnore
+    private Route route;
+    @Column(name = "bus_id", length = 36, nullable = false)
     private String busId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "bus_id", insertable = false, updatable = false)
+    @JsonIgnore
+    private Bus bus;
+    @Column(name = "start_time", nullable = false)
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime startTime;
+    @Transient
     @JsonIgnore
     private List<Ticket> tickets = new ArrayList<>();
+    @Transient
     @JsonIgnore
     private List<DutyAssignment> assignments = new ArrayList<>();
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private TripStatus status;
 
     public BusTrip() {}

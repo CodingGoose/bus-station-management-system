@@ -1,13 +1,40 @@
 package com.example.bus_station_management_system.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "duty_assignment")
 public class DutyAssignment implements Identifiable {
     public enum RoleType {
         PrimaryDriver,
         ReserveDriver
     }
+    @Id
+    @Column(length = 36)
     private String id;
+    @Column(name = "trip_id", length = 36, nullable = false)
     private String tripId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "trip_id", insertable = false, updatable = false)
+    @JsonIgnore
+    private BusTrip trip;
+    @Column(name = "staff_id", length = 36, nullable = false)
     private String staffId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "staff_id", insertable = false, updatable = false)
+    @JsonIgnore
+    private Staff staff;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private RoleType role; // e.g., "Primary Driver/Reserve Driver"
 
     public DutyAssignment(){}

@@ -1,10 +1,35 @@
 package com.example.bus_station_management_system.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "ticket")
 public class Ticket implements Identifiable {
+    @Id
+    @Column(length = 36)
     private String id;
+    @Column(name = "trip_id", length = 36, nullable = false)
     private String tripId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "trip_id", insertable = false, updatable = false)
+    @JsonIgnore
+    private BusTrip trip;
+    @Column(name = "passenger_id", length = 36, nullable = false)
     private String passengerId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "passenger_id", insertable = false, updatable = false)
+    @JsonIgnore
+    private Passenger passenger;
+    @Column(name = "seat_number", nullable = false)
     private String seatNumber;
+    @Column(nullable = false)
     private double price;
 
     public Ticket(){}

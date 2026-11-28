@@ -1,5 +1,14 @@
 package com.example.bus_station_management_system.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "bus")
 public class Bus implements Identifiable {
 
     public enum FuelType {
@@ -14,11 +23,20 @@ public class Bus implements Identifiable {
         Down
     }
 
+    @Id
+    @Column(length = 36)
     private String id;
+    @Column(name = "registration_number", nullable = false)
     private String registrationNumber;
+    @Column(nullable = false)
     private int capacity;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private BusStatus status;
+    @Column(name = "has_ac", nullable = false)
     private boolean hasAC;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "fuel_type", nullable = false)
     private FuelType fuelType;
 
     public Bus(){
